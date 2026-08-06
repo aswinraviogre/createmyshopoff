@@ -10,192 +10,238 @@ export default function Footer() {
 
   return (
     <>
-      {/* Dynamic Bottom Contact Form CTA (Present on all pages) */}
-      <section className="py-[100px] px-6 md:px-12 bg-white dark:bg-[#151515] border-t border-primary/5 select-none">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-forest-light text-primary px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider border border-primary/5">
-              <span className="material-symbols-outlined text-[14px]">explore</span>
-              Start Today
-            </div>
-            <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase tracking-tight leading-none">
-              Got a project in mind?
-              <br />
-              Let's build it together
-            </h2>
-            <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed">
-              We help ambitious brands launch, rebuild, and optimize Shopify ecosystems. Share your challenges and let's assess alignment.
-            </p>
-            <div className="pt-2">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">
-                No sales calls • 2-Hour Response guaranteed
-              </span>
-            </div>
-          </div>
-          <div className="lg:col-span-7">
-            <FitForm />
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="w-full pt-20 pb-10 bg-surface dark:bg-surface-dark border-t border-primary/5 dark:border-white/5 select-none">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Brand & Address Column */}
-          <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
+      <footer className="w-full py-20 bg-surface dark:bg-surface-dark border-t border-primary/5 select-none">
+        <div className="max-w-[1250px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Rounded Contact CTA Card */}
+          <div className="lg:col-span-5 bg-white dark:bg-[#181818] border border-primary/10 dark:border-white/5 rounded-[36px] p-8 shadow-sm flex flex-col space-y-6">
             <div>
-              <Link
-                href="/"
-                className="flex items-center gap-2.5 mb-4 select-none"
-              >
-                <img
-                  src="https://www.maydayinternet.com/wp-content/uploads/2021/11/mayday-logo-minimal.png"
-                  alt="Mayday Internet Logo"
-                  className="h-8 object-contain dark:invert"
-                />
-                <span className="font-display text-2xl font-black text-on-surface tracking-tight">Mayday Internet</span>
-              </Link>
-              <p className="font-sans text-sm text-on-surface-variant max-w-sm">
-                We build stable, scalable, and operationally sound e-commerce experiences. Evolving with the digital landscape.
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light text-primary font-mono text-[10px] uppercase tracking-wider select-none w-fit border border-primary/5">
+                ✦ Got a project in mind?
+              </div>
+              <h2 className="font-display text-3xl md:text-[38px] font-black text-on-surface uppercase tracking-tight mt-6 leading-[1.1]">
+                Let's build it
+                <br />
+                together.
+              </h2>
+              <p className="font-sans text-xs md:text-sm text-on-surface-variant mt-3 leading-relaxed">
+                Consult a Shopify expert — free, no obligation call.
               </p>
             </div>
 
-            {/* Address Details */}
-            <div className="space-y-4">
-              <div>
-                <h5 className="font-mono text-[10px] uppercase tracking-wider text-primary font-bold mb-1">Panampilly Nagar Office</h5>
-                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                  9th Cross Rd, Avenue Road, above Starbucks, Panampilly Nagar, Kochi, Kerala 682036
-                </p>
-              </div>
-              <div>
-                <h5 className="font-mono text-[10px] uppercase tracking-wider text-primary font-bold mb-1">Indira Nagar Office</h5>
-                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                  279, 5th Main Road, 6th Cross Rd, Indira Nagar II Stage, Bengaluru, Karnataka 560038
-                </p>
-              </div>
-            </div>
-
-            <p className="font-sans text-[11px] text-on-surface-variant opacity-75">
-              © {new Date().getFullYear()} Mayday Internet. All rights reserved.
-            </p>
+            {/* Nested Form */}
+            <FitForm />
           </div>
 
-          {/* Links Column */}
-          <div className="lg:col-span-5 grid grid-cols-2 md:grid-cols-3 gap-8">
-            {/* Nav Column */}
-            <div className="flex flex-col gap-3">
-              <h4 className="font-mono text-xs uppercase tracking-wider text-on-surface font-semibold mb-2">
-                Navigation
-              </h4>
-              <Link href="/" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/about-us" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                About Us
-              </Link>
-              <Link href="/contact-us" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Contact Us
-              </Link>
-              <a href="#" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Careers
-              </a>
-            </div>
-
-            {/* Showcase Column */}
-            <div className="flex flex-col gap-3">
-              <h4 className="font-mono text-xs uppercase tracking-wider text-on-surface font-semibold mb-2">
-                Showcase
-              </h4>
-              <Link href="/recent-projects" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Recent Projects
-              </Link>
-              <Link href="/case-studies" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Case Studies
-              </Link>
-              <Link href="/blogs" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Blogs & News
-              </Link>
-            </div>
-
-            {/* Builds Column */}
-            <div className="flex flex-col gap-3">
-              <h4 className="font-mono text-xs uppercase tracking-wider text-on-surface font-semibold mb-2">
-                Services
-              </h4>
-              <Link href="/ecommerce-website-development" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Store Builds
-              </Link>
-              <Link href="/shopify-ecommerce-development" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Shopify Builds
-              </Link>
-              <Link href="/platform-migration" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                Safe Migration
-              </Link>
-              <Link href="/conversion-rate-optimisation" className="font-sans text-sm text-on-surface-variant hover:text-primary transition-colors">
-                CRO Growth
-              </Link>
-            </div>
-          </div>
-
-          {/* Contact & Profiles Column */}
-          <div className="lg:col-span-3 flex flex-col gap-6">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-on-surface font-semibold">
-              Get in Touch
-            </h4>
+          {/* Right Column: Footer Links, Profiles, Support & Address */}
+          <div className="lg:col-span-7 space-y-12">
             
-            {/* Team Roster */}
-            <div className="space-y-4">
-              <div>
-                <a
-                  href="https://in.linkedin.com/in/alex-babuofficial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm font-bold text-on-surface hover:text-primary flex items-center gap-1 transition-colors"
-                >
-                  Alex Babu
-                  <span className="material-symbols-outlined text-xs">open_in_new</span>
+            {/* Nav Links Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+              {/* Company */}
+              <div className="flex flex-col gap-3">
+                <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                  Company
+                </h4>
+                <Link href="/" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Home
+                </Link>
+                <Link href="/about-us" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  About Us
+                </Link>
+                <a href="#" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Careers
                 </a>
-                <span className="font-sans text-[11px] text-on-surface-variant">Founder & CEO</span>
+                <Link href="/contact-us" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Contact Us
+                </Link>
               </div>
-              <div>
-                <a
-                  href="#"
-                  className="font-sans text-sm font-bold text-on-surface hover:text-primary transition-colors"
-                >
-                  Ashwin Thomas
-                </a>
-                <br />
-                <span className="font-sans text-[11px] text-on-surface-variant">Strategy and Growth Consultant</span>
+
+              {/* Explore */}
+              <div className="flex flex-col gap-3">
+                <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                  Explore
+                </h4>
+                <Link href="/recent-projects" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Recent Projects
+                </Link>
+                <Link href="/case-studies" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Case Studies
+                </Link>
+                <Link href="/blogs" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Blogs
+                </Link>
+              </div>
+
+              {/* Platform Build */}
+              <div className="flex flex-col gap-3">
+                <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                  Platform Build
+                </h4>
+                <Link href="/ecommerce-website-development" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Store Builds
+                </Link>
+                <Link href="/shopify-ecommerce-development" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Shopify Builds
+                </Link>
+                <Link href="/platform-migration" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Brand Rebuilds
+                </Link>
+                <Link href="/platform-migration" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Platform Migration
+                </Link>
+              </div>
+
+              {/* Growth Optimization */}
+              <div className="flex flex-col gap-3">
+                <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                  Growth Optimization
+                </h4>
+                <Link href="/conversion-rate-optimisation" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  CRO Growth
+                </Link>
+                <Link href="/platform-migration" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Brand Rebuilds
+                </Link>
+                <Link href="/ecommerce-analytics" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Ecommerce Analytics
+                </Link>
+                <Link href="/ecommerce-consultation" className="font-sans text-xs font-semibold text-on-surface hover:text-[#22c55e] transition-colors">
+                  Strategic Consulting
+                </Link>
               </div>
             </div>
 
-            {/* Contact Details */}
-            <div className="space-y-3 pt-2 border-t border-primary/5">
-              <a
-                href="mailto:hello@maydayinternet.com"
-                className="flex items-center gap-2 font-sans text-xs text-on-surface-variant hover:text-primary transition-colors"
-              >
-                <span className="material-symbols-outlined text-[16px]">mail</span>
-                hello@maydayinternet.com
-              </a>
-              <a
-                href="tel:+918129410168"
-                className="flex items-center gap-2 font-sans text-xs text-on-surface-variant hover:text-primary transition-colors"
-              >
-                <span className="material-symbols-outlined text-[16px]">phone</span>
-                +91 81294 10168
-              </a>
-              <a
-                href="https://wa.me/+918089001603"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 font-sans text-xs text-on-surface-variant hover:text-primary transition-colors"
-              >
-                <span className="material-symbols-outlined text-[16px]">forum</span>
-                +91 80890 01603 (WhatsApp)
-              </a>
+            {/* Divider line */}
+            <div className="w-full h-px bg-primary/5 dark:bg-white/5" />
+
+            {/* Talk to Us Section */}
+            <div className="space-y-4">
+              <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                Talk to Us
+              </h4>
+              <div className="max-w-sm">
+                {/* Gowtham Krishna Profile */}
+                <div className="flex items-center justify-between bg-white dark:bg-white/5 border border-primary/5 rounded-2xl p-3 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="/gowtham.png"
+                      alt="Gowtham Krishna"
+                      className="w-11 h-11 rounded-full object-cover"
+                    />
+                    <div className="flex flex-col text-left">
+                      <span className="font-sans text-xs font-bold text-on-surface">Gowtham Krishna</span>
+                      <span className="font-sans text-[10px] text-on-surface-variant">Founder & CEO</span>
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    className="w-8 h-8 rounded-lg bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-primary hover:bg-[#22c55e] hover:text-white transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
+
+            {/* Support and Address Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+              {/* Support */}
+              <div className="space-y-4">
+                <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                  Support
+                </h4>
+                <div className="space-y-3">
+                  <a href="mailto:office@maydayinternet.com" className="flex items-center gap-3 group">
+                    <div className="w-8 h-8 rounded-lg bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface-variant group-hover:bg-[#22c55e] group-hover:text-white transition-colors">
+                      <span className="material-symbols-outlined text-[18px]">mail</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-secondary leading-none">Email</span>
+                      <span className="text-xs font-semibold text-on-surface mt-0.5">office@maydayinternet.com</span>
+                    </div>
+                  </a>
+
+                  <a href="tel:+918129410168" className="flex items-center gap-3 group">
+                    <div className="w-8 h-8 rounded-lg bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface-variant group-hover:bg-[#22c55e] group-hover:text-white transition-colors">
+                      <span className="material-symbols-outlined text-[18px]">phone</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-secondary leading-none">Phone</span>
+                      <span className="text-xs font-semibold text-on-surface mt-0.5">+91 81294 10168</span>
+                    </div>
+                  </a>
+
+                  <a href="https://wa.me/+918089001603" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                    <div className="w-8 h-8 rounded-lg bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface-variant group-hover:bg-[#22c55e] group-hover:text-white transition-colors">
+                      <span className="material-symbols-outlined text-[18px]">forum</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-secondary leading-none">WhatsApp</span>
+                      <span className="text-xs font-semibold text-on-surface mt-0.5">+91 80890 01603</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="space-y-4">
+                <h4 className="font-sans text-[11px] font-bold uppercase tracking-widest text-secondary opacity-70">
+                  Address
+                </h4>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface-variant shrink-0">
+                      <span className="material-symbols-outlined text-[18px]">location_on</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-secondary leading-none">Kochi Office</span>
+                      <span className="text-xs text-on-surface-variant leading-relaxed mt-0.5">
+                        9th Cross Rd, Avenue Road, above Starbucks, Panampilly Nagar, Kerala 682036
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface-variant shrink-0">
+                      <span className="material-symbols-outlined text-[18px]">location_on</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-secondary leading-none">Bangalore Office</span>
+                      <span className="text-xs text-on-surface-variant leading-relaxed mt-0.5">
+                        279, 5th Main Road, 6th Cross Rd, Indira Nagar II Stage, Karnataka 560038
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Socials & Copyright */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-primary/5 dark:border-white/5">
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a href="#" className="w-9 h-9 rounded-full bg-[#f2f4f2] dark:bg-white/5 hover:bg-[#22c55e] hover:text-white flex items-center justify-center text-on-surface transition-colors">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </a>
+                <a href="https://in.linkedin.com/in/alex-babuofficial" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#f2f4f2] dark:bg-white/5 hover:bg-[#22c55e] hover:text-white flex items-center justify-center text-on-surface transition-colors">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" className="w-9 h-9 rounded-full bg-[#f2f4f2] dark:bg-white/5 hover:bg-[#22c55e] hover:text-white flex items-center justify-center text-on-surface transition-colors">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" className="w-9 h-9 rounded-full bg-[#f2f4f2] dark:bg-white/5 hover:bg-[#22c55e] hover:text-white flex items-center justify-center text-on-surface transition-colors">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+              </div>
+
+              <p className="font-sans text-[11px] text-on-surface-variant opacity-75">
+                © {new Date().getFullYear()} Mayday Internet. All rights reserved.
+              </p>
+            </div>
+
           </div>
         </div>
       </footer>

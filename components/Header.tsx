@@ -209,7 +209,7 @@ export default function Header() {
           </li>
         </ul>
 
-        {/* Action Button */}
+        {/* Action Button (Desktop) */}
         <button
           onClick={() => setContactOpen(true)}
           className="bg-primary hover:bg-forest-deep text-white px-6 py-2.5 rounded-full font-mono text-[12px] font-medium uppercase tracking-widest transition-colors scale-95 active:scale-90 hidden md:flex items-center gap-2 cursor-pointer shadow-sm"
@@ -218,16 +218,31 @@ export default function Header() {
           <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
         </button>
 
-        {/* Mobile menu toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-on-surface cursor-pointer select-none"
-          aria-label="Toggle menu"
-        >
-          <span className="material-symbols-outlined text-2xl">
-            {mobileMenuOpen ? "close" : "menu"}
-          </span>
-        </button>
+        {/* Mobile Action & Menu Controls */}
+        <div className="flex md:hidden items-center gap-2 select-none">
+          <button
+            onClick={() => setContactOpen(true)}
+            className="bg-white dark:bg-white/5 border border-primary/5 hover:border-primary/20 text-on-surface px-4 py-2 rounded-full font-sans text-[11px] font-bold shadow-sm flex items-center gap-1 active:scale-95 duration-150 cursor-pointer"
+          >
+            Let's Talk
+            <span className="material-symbols-outlined text-[12px] font-black">arrow_forward</span>
+          </button>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="w-10 h-10 rounded-full bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface border border-primary/5 hover:bg-[#e2e8f0] dark:hover:bg-white/10 transition-colors cursor-pointer"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <span className="material-symbols-outlined text-lg">close</span>
+            ) : (
+              <div className="flex flex-col gap-[3px] items-center justify-center">
+                <div className="w-4.5 h-[2px] bg-on-surface rounded-full" />
+                <div className="w-4.5 h-[2px] bg-on-surface rounded-full" />
+              </div>
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu Backdrop */}

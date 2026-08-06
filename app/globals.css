@@ -89,4 +89,139 @@ body {
   animation-play-state: paused;
 }
 
+/* Floating Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Image marquee animation */
+@keyframes marquee-images {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-images {
+  display: flex;
+  width: max-content;
+  animation: marquee-images 40s linear infinite;
+}
+
+.animate-marquee-images:hover {
+  animation-play-state: paused;
+}
+
+/* Right Fit Section Entrance Animations */
+.right-fit-section .image-container {
+  transform: translateY(40px) scale(0.98);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.right-fit-section.visible .image-container {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.right-fit-section .badge-left-1 {
+  transform: translateX(-35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+.right-fit-section.visible .badge-left-1 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.right-fit-section .badge-left-2 {
+  transform: translateX(-35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+.right-fit-section.visible .badge-left-2 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.right-fit-section .badge-right {
+  transform: translateX(35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+.right-fit-section.visible .badge-right {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+/* Build & Platform Section Entrance Animations */
+.build-platform-section .image-container {
+  transform: translateY(40px) scale(0.98);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.build-platform-section.visible .image-container {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.build-platform-section .badge-left-1 {
+  transform: translateX(-35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+.build-platform-section.visible .badge-left-1 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.build-platform-section .badge-left-2 {
+  transform: translateX(-35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+.build-platform-section.visible .badge-left-2 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.build-platform-section .badge-right-1 {
+  transform: translateX(35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+.build-platform-section.visible .badge-right-1 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.build-platform-section .badge-right-2 {
+  transform: translateX(35px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+}
+.build-platform-section.visible .badge-right-2 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+
 

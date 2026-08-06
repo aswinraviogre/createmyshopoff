@@ -40,55 +40,139 @@ export default function Home() {
     {
       title: "Popees Baby Care",
       tag: "Shopify Redesign",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDZxwohiYg8ZgdBSaTaHiFGP9_L9MxcbdmImPbCdhc6eflWc4dxvlwvguUKAh7nv0DG5e9LDSWjAzYSeuNZojRTq3G72zw9qRlFQotfIN-YvDunO2SuJBp2F74FelqrC_WGiPVSg6NBUWsb-ql99Rsv7TEfx4Z2um4T4tjGJw0vyv0P4qPjBThKQz7DoaYPGGqzCW6Trvfd7aFBKUrPDYY2T6vfio-nkkuWufEG6YcFxYUZgItXVF66",
+      image: "/mockup1.png",
       href: "https://popees.com/",
     },
     {
       title: "Kalyan Silks India",
       tag: "Shopify Redesign",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0hSBZLdZED1L5sm8ECvHbqgf3k8HWmQ_F-tHG3ox5-n54G8xfB47tu5qK4b37lfHaQ6RmubU5_F9DZkveoLr-BatRZVoxVzvIMqH0mGJzoEmE9Y3YlgZK_TS-mCDGbY35nVwG_-ysI6-BMj94MEwqVJDWH8eRLGb-DYflgMoHQoCSTr9LuPLOEoq_xCawu8RAmqHp6-xFACiyAxaspjWbMDbxv2ramcd2FqJBfrZUOQlWBOKK0jzy",
+      image: "/mockup2.png",
       href: "https://kalyansilks.com/",
     },
     {
       title: "iBell Home Appliances",
       tag: "Shopify Redesign",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAv3g64max3sCY0GzAfVgHewxjW2gKr412jAZDOztGYT0bEbQLAOt9_gjibeGc75kEF2nxPRS8h4Isr4viHlwKJQ9u2K6qjPtX4uHkGDP2fSMYNDo-PkVQiNrPDvjLDUfMhdeyb1i8QWnbnOOphbxuvmfUJ7QDjDVhI4WiCkFO07e5EA5f7WxyV7McSx2zsHWcZN7-xTkY66F-P5VfNhfUpwUhwMt4u6w5blLmeiNooy6R63Xd1Kz1B",
+      image: "/mockup4.png",
       href: "https://ibellstore.com/",
+    },
+  ];
+
+  const mockups = [
+    {
+      src: "/mockup3.png",
+      alt: "Dötch Leather Store Bag Showcase",
+      title: "DÖTCH",
+      label: "Dotch Leather UK",
+      isSerif: true,
+    },
+    {
+      src: "/mockup2.png",
+      alt: "Kalyan Silks India Showcase",
+      title: "KALYAN",
+      label: "Kalyan Silks India",
+      isSerif: false,
+      hasWhatsapp: true,
+    },
+    {
+      src: "/mockup1.png",
+      alt: "Popees Baby Care Showcase",
+      title: "POPEES",
+      label: "Popees Baby Care",
+      isSerif: false,
+    },
+    {
+      src: "/mockup4.png",
+      alt: "iBell Home Appliances Showcase",
+      title: "iBELL",
+      label: "iBell Home Appliances",
+      isSerif: false,
     },
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="pt-[160px] pb-12 px-6 md:px-12 max-w-[1400px] mx-auto fade-up relative z-20">
+      <section className="pt-[140px] md:pt-[180px] pb-12 px-6 md:px-12 max-w-[1400px] mx-auto fade-up relative z-20">
         <div className="max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-light text-primary font-mono text-[12px] font-medium uppercase tracking-widest mb-8 border border-primary/10 select-none">
-            <span className="material-symbols-outlined text-[14px]">diamond</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-primary font-mono text-[11px] font-semibold uppercase tracking-wider mb-8 border border-primary/5 select-none">
+            <span>✦</span>
             Premium Shopify Developers
           </div>
-          <h1 className="font-display text-[44px] md:text-[80px] font-black text-on-surface mb-8 tracking-tighter leading-[1.05] uppercase">
+          <h1 className="font-display text-[42px] md:text-[80px] font-black text-on-surface mb-8 tracking-tighter leading-[1.05] uppercase">
             Build e-commerce
             <br />
             that scales with confidence
           </h1>
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 pl-0 md:pl-12 mt-8">
-            <p className="font-sans text-[18px] leading-[30px] text-secondary max-w-sm">
+          <div className="flex flex-col items-start gap-6 mt-8 pl-0 md:pl-4">
+            <p className="font-sans text-base md:text-[18px] leading-relaxed md:leading-[30px] text-secondary max-w-sm">
               Trusted e-commerce solutions designed to scale with your brand.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto select-none">
+            <div className="flex flex-row items-center gap-3 w-full sm:w-auto select-none">
               <button
                 onClick={() => setContactOpen(true)}
-                className="w-full sm:w-auto bg-[#b3e620] hover:bg-[#9ccc1c] text-on-surface px-8 py-4 rounded-full font-sans text-sm font-semibold transition-colors cursor-pointer shadow-sm active:scale-95 duration-150"
+                className="bg-[#b3e620] hover:bg-[#9ccc1c] text-on-surface px-5 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-sm active:scale-95 duration-150 shrink-0"
               >
                 Start a Conversation
               </button>
               <Link
                 href="/recent-projects"
-                className="w-full sm:w-auto text-center bg-white border border-outline-variant hover:border-primary text-on-surface px-8 py-4 rounded-full font-sans text-sm font-semibold transition-all active:scale-95 duration-150"
+                className="text-center bg-white border border-outline-variant hover:border-primary text-on-surface px-5 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all active:scale-95 duration-150 shrink-0"
               >
                 View Works
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Infinite Image Marquee */}
+      <section className="py-8 bg-white dark:bg-[#181818] overflow-hidden relative z-20 fade-up">
+        {/* Soft edge gradients */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
+        
+        <div className="w-full overflow-hidden relative">
+          <div className="flex animate-marquee-images gap-6 whitespace-nowrap animate-once">
+            {[...mockups, ...mockups, ...mockups, ...mockups].map((mockup, idx) => (
+              <div 
+                key={idx}
+                className="w-[280px] sm:w-[380px] md:w-[460px] aspect-[16/10] bg-surface-container rounded-2xl md:rounded-[28px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-500 shrink-0 inline-block relative select-none"
+              >
+                {/* Background Image */}
+                <img 
+                  src={mockup.src} 
+                  alt={mockup.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+
+                {/* Gradient overlay for better text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+
+                {/* Center text overlay */}
+                {mockup.title && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className={`text-white tracking-widest text-3xl md:text-5xl font-black uppercase select-none opacity-90 drop-shadow-md ${mockup.isSerif ? 'font-serif' : 'font-display'}`}>
+                      {mockup.title}
+                    </span>
+                  </div>
+                )}
+
+                {/* Bottom Left tag/badge */}
+                <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                  {mockup.hasWhatsapp && (
+                    <div className="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-md animate-bounce shrink-0">
+                      <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.45 5.515.003 10.002-4.482 10.005-9.999.002-2.673-1.04-5.186-2.936-7.086-1.896-1.9-4.41-2.946-7.08-2.948-5.52 0-10.008 4.484-10.01 10.002-.001 1.747.502 3.447 1.461 4.969L1.082 22.9l6.566-1.746zm11.758-6.173c-.297-.149-1.758-.868-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                  )}
+                  <span className="bg-white/95 text-on-surface px-3 py-1.5 rounded-[10px] font-sans text-[10px] font-bold shadow-sm select-none border border-primary/5">
+                    {mockup.label}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -225,8 +309,51 @@ export default function Home() {
 
       {/* Proven Results Section */}
       <section className="py-[120px] px-6 md:px-12 bg-surface">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="fade-up">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Phone Mockup with 3 floating notifications */}
+          <div className="lg:col-span-6 relative flex justify-center items-center py-8 fade-up">
+            <div className="relative w-[280px] sm:w-[320px] aspect-[9/18] bg-surface-container rounded-[40px] overflow-hidden border-[6px] border-on-surface shadow-2xl select-none image-container">
+              <img 
+                src="/phone_mockup.png"
+                alt="Shopify Phone Mockup"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Badge 1 (Top-Left): 73.6% Conversion Rate */}
+            <div className="absolute top-[10%] -left-4 md:-left-8 z-30 flex">
+              <div className="animate-float-slow bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ 73.6% Conversion Rate</span>
+              </div>
+            </div>
+
+            {/* Badge 2 (Middle-Right): 145.4% YoY Growth */}
+            <div className="absolute top-[40%] -right-4 md:-right-8 z-30 flex">
+              <div className="animate-float-medium bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ 145.4% YoY Growth</span>
+              </div>
+            </div>
+
+            {/* Badge 3 (Bottom-Left): 2.8s Load Speed */}
+            <div className="absolute bottom-[15%] -left-6 md:-left-12 z-30 flex">
+              <div className="animate-float-fast bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ 2.8s Load Speed</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Title and stats list */}
+          <div className="lg:col-span-6 space-y-6 fade-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-6 font-mono text-[10px] uppercase tracking-wider select-none">
               <span className="material-symbols-outlined text-primary text-[14px]">verified</span>
               <span className="text-primary font-semibold">Proven Results</span>
@@ -237,111 +364,212 @@ export default function Home() {
             <p className="font-sans text-[18px] leading-[30px] text-on-surface-variant max-w-lg">
               When you do ecommerce work properly and without shortcuts, the outcomes tend to take care of themselves.
             </p>
-            <p className="font-sans text-sm text-on-surface-variant italic mt-8 max-w-md border-l-2 border-primary pl-4">
+            
+            {/* Stats List */}
+            <div className="space-y-4 pt-4 border-t border-primary/5">
+              <div className="flex justify-between items-center py-2 border-b border-primary/5">
+                <span className="font-display text-3xl md:text-4xl font-black text-primary">50+</span>
+                <span className="font-sans text-xs font-semibold text-secondary">Shopify Stores Launched</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/5">
+                <span className="font-display text-3xl md:text-4xl font-black text-primary">7+</span>
+                <span className="font-sans text-xs font-semibold text-secondary">Years in Shopify Ecosystem</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/5">
+                <span className="font-display text-3xl md:text-4xl font-black text-primary">₹10Cr+</span>
+                <span className="font-sans text-xs font-semibold text-secondary">Revenue Enabled</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/5">
+                <span className="font-display text-3xl md:text-4xl font-black text-primary">2hr</span>
+                <span className="font-sans text-xs font-semibold text-secondary">Response Guarantee</span>
+              </div>
+            </div>
+            
+            <p className="font-sans text-xs text-on-surface-variant italic mt-8 max-w-md border-l-2 border-primary/20 pl-4">
               Every number here belongs to a real brand — one we were trusted to build, migrate, or grow.
             </p>
-          </div>
-          <div className="grid grid-cols-2 gap-6 select-none fade-up">
-            <div className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 shadow-sm text-center">
-              <div className="font-display text-4xl md:text-5xl font-black text-primary">50+</div>
-              <div className="font-sans text-xs font-semibold text-secondary mt-2">Shopify Stores Launched</div>
-            </div>
-            <div className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 shadow-sm text-center">
-              <div className="font-display text-4xl md:text-5xl font-black text-primary">7+</div>
-              <div className="font-sans text-xs font-semibold text-secondary mt-2">Years in Shopify Ecosystem</div>
-            </div>
-            <div className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 shadow-sm text-center">
-              <div className="font-display text-4xl md:text-5xl font-black text-primary">₹10Cr+</div>
-              <div className="font-sans text-xs font-semibold text-secondary mt-2">Revenue Enabled</div>
-            </div>
-            <div className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 shadow-sm text-center">
-              <div className="font-display text-4xl md:text-5xl font-black text-primary">2hr</div>
-              <div className="font-sans text-xs font-semibold text-secondary mt-2">Response Guarantee</div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Right Fit Section */}
-      <section className="py-[120px] px-6 md:px-12 bg-white dark:bg-[#181818]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 space-y-6 fade-up">
-            <div className="inline-flex items-center gap-2 bg-forest-light text-primary-container px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider select-none">
-              <span className="material-symbols-outlined text-[16px]">target</span>
+      <section className="py-[120px] px-6 md:px-12 bg-white dark:bg-[#181818] right-fit-section fade-up">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Description & Bullets */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="inline-flex items-center gap-2 bg-forest-light text-primary px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider select-none border border-primary/5">
+              <span className="material-symbols-outlined text-[16px] text-primary">target</span>
               Right Fit
             </div>
-            <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase">
-              For Leaders Who Need Certainty
+            <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase tracking-tight leading-none">
+              For Leaders
+              <br />
+              Who Need Certainty
             </h2>
             <p className="font-sans text-base text-on-surface-variant leading-relaxed">
               We work best with founders past the early stage, digital heads accountable for revenue, and brands where ecommerce isn't optional — it's the business.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2 select-none">
+            <div className="space-y-3 select-none">
               {["Scaling Founders", "Heads of Digital", "Core-Channel Brands"].map((fit, idx) => (
-                <span key={idx} className="flex items-center gap-1.5 bg-forest-light text-primary border border-primary/10 rounded-full px-4 py-1.5 text-xs font-semibold">
-                  <span className="material-symbols-outlined text-xs">emergency</span>
-                  {fit}
-                </span>
+                <div key={idx} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
+                  <span className="font-sans text-sm font-semibold text-on-surface">{fit}</span>
+                </div>
               ))}
             </div>
-            <p className="font-sans text-sm text-on-surface-variant italic border-l-2 border-primary pl-4 pt-1">
+            <p className="font-sans text-sm text-[#5c5f5e] italic border-l-2 border-primary pl-4 pt-1">
               If your business depends on ecommerce working every day — we're built for you.
             </p>
           </div>
-          <div className="lg:col-span-7 relative h-[450px] rounded-3xl overflow-hidden shadow-md border border-primary/10 fade-up">
-            <img
-              className="absolute inset-0 w-full h-full object-cover"
-              alt="Satisfied eCommerce Leaders Work Culture"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZxwohiYg8ZgdBSaTaHiFGP9_L9MxcbdmImPbCdhc6eflWc4dxvlwvguUKAh7nv0DG5e9LDSWjAzYSeuNZojRTq3G72zw9qRlFQotfIN-YvDunO2SuJBp2F74FelqrC_WGiPVSg6NBUWsb-ql99Rsv7TEfx4Z2um4T4tjGJw0vyv0P4qPjBThKQz7DoaYPGGqzCW6Trvfd7aFBKUrPDYY2T6vfio-nkkuWufEG6YcFxYUZgItXVF66"
-            />
+
+          {/* Right Column: Image with 3 floating badges */}
+          <div className="lg:col-span-7 relative flex justify-center items-center py-8">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[36px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-lg image-container">
+              <img
+                className="w-full h-full object-cover"
+                alt="eCommerce Leader working on a phone in workspace"
+                src="/mockup2.png"
+              />
+            </div>
+
+            {/* Badge 1 (Top-Left): Team Status: Responding in < 2hr */}
+            <div className="badge-left-1 absolute top-[15%] -left-4 md:-left-8 z-30 flex">
+              <div className="animate-float-slow bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Team Status: Responding in &lt; 2hr</span>
+              </div>
+            </div>
+
+            {/* Badge 2 (Middle-Right): Project Status: Delivered in 3w */}
+            <div className="badge-right absolute top-[48%] -right-4 md:-right-8 z-30 flex">
+              <div className="animate-float-medium bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Project Status: Delivered in 3w</span>
+              </div>
+            </div>
+
+            {/* Badge 3 (Bottom-Left): SLA Status: 100% Up-Time */}
+            <div className="badge-left-2 absolute bottom-[18%] -left-6 md:-left-12 z-30 flex">
+              <div className="animate-float-fast bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ SLA Status: 100% Up-Time</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Build & Platform Services */}
-      <section className="py-[120px] px-6 md:px-12 bg-surface">
-        <div className="max-w-[1200px] mx-auto space-y-12">
-          <div className="max-w-2xl fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none">
-              <span className="material-symbols-outlined text-primary text-[14px]">architecture</span>
-              <span className="text-primary font-semibold">Platform Build</span>
+      <section className="py-[120px] px-6 md:px-12 bg-surface build-platform-section fade-up">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Image with 4 floating badges */}
+          <div className="lg:col-span-6 relative flex justify-center items-center py-8 order-last lg:order-first">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[36px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-lg image-container">
+              <img
+                className="w-full h-full object-cover"
+                alt="Product developer working on a premium laptop"
+                src="/mockup1.png"
+              />
             </div>
-            <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase">
-              Build &amp; Platform
-            </h2>
-            <p className="font-sans text-base text-on-surface-variant mt-2">
-              We build stable platforms that are ready to grow with your business.
-            </p>
+
+            {/* Badge 1 (Top-Left): Interactive mockup check */}
+            <div className="badge-left-1 absolute top-[15%] -left-4 md:-left-8 z-30 flex">
+              <div className="animate-float-slow bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Interactive mockup check</span>
+              </div>
+            </div>
+
+            {/* Badge 2 (Bottom-Left): Built to scale with growth */}
+            <div className="badge-left-2 absolute bottom-[18%] -left-6 md:-left-12 z-30 flex">
+              <div className="animate-float-fast bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Built to scale with growth</span>
+              </div>
+            </div>
+
+            {/* Badge 3 (Middle-Right): Stable during traffic spikes */}
+            <div className="badge-right-1 absolute top-[48%] -right-4 md:-right-8 z-30 flex">
+              <div className="animate-float-medium bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Stable during traffic spikes</span>
+              </div>
+            </div>
+
+            {/* Badge 4 (Bottom-Right): SEO-safe migrations */}
+            <div className="badge-right-2 absolute bottom-[8%] right-[10%] z-30 flex">
+              <div className="animate-float-slow bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ SEO-safe migrations</span>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
-            <Link href="/ecommerce-website-development" className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-8 hover:shadow-md transition-shadow group">
-              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mb-6">
-                <span className="material-symbols-outlined">web</span>
+
+          {/* Right Column: Title & Capsules List */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-6 fade-up">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none text-primary">
+                <span>✦</span>
+                <span className="font-semibold">Platform Build</span>
               </div>
-              <h3 className="font-sans text-base font-bold text-on-surface mb-2">Ecommerce Builds</h3>
-              <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                Stable ecommerce foundations for growth.
+              <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase tracking-tight leading-none">
+                Build &amp; Platform
+              </h2>
+              <p className="font-sans text-base text-on-surface-variant mt-4 leading-relaxed">
+                We build stable platforms that are ready to grow with your business.
               </p>
-            </Link>
-            <Link href="/shopify-ecommerce-development" className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-8 hover:shadow-md transition-shadow group">
-              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mb-6">
-                <span className="material-symbols-outlined">storefront</span>
-              </div>
-              <h3 className="font-sans text-base font-bold text-on-surface mb-2">Shopify Development</h3>
-              <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                Clean Shopify systems built to scale.
-              </p>
-            </Link>
-            <Link href="/platform-migration" className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-8 hover:shadow-md transition-shadow group">
-              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mb-6">
-                <span className="material-symbols-outlined">swap_horiz</span>
-              </div>
-              <h3 className="font-sans text-base font-bold text-on-surface mb-2">Platform Migration</h3>
-              <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                Safe migrations protecting revenue and SEO.
-              </p>
-            </Link>
+            </div>
+
+            {/* Capsules List */}
+            <div className="space-y-4">
+              <Link href="/ecommerce-website-development" className="flex items-center gap-4 bg-white/60 dark:bg-white/5 border border-primary/5 hover:border-primary/20 p-3 pr-6 rounded-full hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white flex items-center justify-center shrink-0 group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
+                </div>
+                <div className="flex flex-col text-left">
+                  <h4 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-[#22c55e] transition-colors leading-tight">Ecommerce Builds</h4>
+                  <p className="font-sans text-xs text-secondary mt-0.5">Stable ecommerce foundations for growth.</p>
+                </div>
+              </Link>
+
+              <Link href="/shopify-ecommerce-development" className="flex items-center gap-4 bg-white/60 dark:bg-white/5 border border-primary/5 hover:border-primary/20 p-3 pr-6 rounded-full hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white flex items-center justify-center shrink-0 group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">paid</span>
+                </div>
+                <div className="flex flex-col text-left">
+                  <h4 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-[#22c55e] transition-colors leading-tight">Shopify Development</h4>
+                  <p className="font-sans text-xs text-secondary mt-0.5">Clean Shopify systems built to scale.</p>
+                </div>
+              </Link>
+
+              <Link href="/platform-migration" className="flex items-center gap-4 bg-white/60 dark:bg-white/5 border border-primary/5 hover:border-primary/20 p-3 pr-6 rounded-full hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white flex items-center justify-center shrink-0 group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">dns</span>
+                </div>
+                <div className="flex flex-col text-left">
+                  <h4 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-[#22c55e] transition-colors leading-tight">Platform Migration</h4>
+                  <p className="font-sans text-xs text-secondary mt-0.5">Safe migrations protecting revenue and SEO.</p>
+                </div>
+              </Link>
+            </div>
           </div>
+          
         </div>
       </section>
 
