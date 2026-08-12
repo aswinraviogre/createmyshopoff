@@ -102,7 +102,7 @@ export default function Header() {
             alt="Mayday Internet Logo"
             className="h-8 md:h-9 object-contain dark:invert"
           />
-          <span className="font-display text-[20px] md:text-[22px] font-black text-on-surface tracking-tight">Create my shop</span>
+          <span className="font-display text-[20px] md:text-[22px] font-medium text-on-surface tracking-tight">Create my shop</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -265,7 +265,7 @@ export default function Header() {
               alt="Mayday Internet Logo"
               className="h-8 object-contain dark:invert"
             />
-            <span className="font-display text-[20px] font-black text-on-surface tracking-tight">Mayday</span>
+            <span className="font-display text-[20px] font-medium text-on-surface tracking-tight">Create my shop</span>
           </div>
 
           <ul className="flex flex-col gap-4">

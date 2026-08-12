@@ -10,6 +10,7 @@ interface BlogPost {
   category: string;
   href: string;
   excerpt: string;
+  image: string;
 }
 
 export default function Blogs() {
@@ -39,19 +40,21 @@ export default function Blogs() {
       title: "Why Shopify Transaction Fees Don’t Apply to Quick Checkouts Like GoKwik, Razorpay Magic Checkout & Shopflo in India — and How Long This Will Last",
       date: "July 27, 2026",
       readTime: "8 min Read",
-      category: "Shopify / Checkouts",
+      category: "Checkouts • Shopify",
       href: "/why-shopify-transaction-fees-dont-apply-to-quick-checkouts-like-gokwik-razorpay-magic-checkout-shopflo-in-india-and-how-long-this-will-last",
       excerpt:
         "Understand the mechanics behind third-party checkout redirects in India, why they bypass standard Shopify transaction fees, and Vercel/Shopify's upcoming policy updates on headless integrations.",
+      image: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Why-Shopify-Transaction.png",
     },
     {
       title: "Payment Gateway Reconciliation for Indian E-commerce: Methods, Software, GST & Best Practices",
       date: "June 11, 2026",
       readTime: "8 min Read",
-      category: "Ecommerce / Payment Gateway",
+      category: "Ecommerce • Payment Gateway",
       href: "/payment-gateway-reconciliation-for-indian-e-commerce-methods-software-gst-best-practices",
       excerpt:
         "A practical blueprint on accounting reconciliation. How to automatically audit settlement accounts against orders, manage refunds, verify transaction charges, and audit GST invoicing.",
+      image: "https://www.maydayinternet.com/wp-content/uploads/2026/06/Payment-Gateway-Reconciliation-scaled.jpeg",
     },
     {
       title: "Engineering Greener Ecosystems: The Mayday Internet Sustainability Framework",
@@ -61,6 +64,7 @@ export default function Blogs() {
       href: "/sustainability-roadmap",
       excerpt:
         "Reducing carbon footprints on modern headless storefronts. How we design asset pipelines, optimize hosting infrastructure, and minimize execution queries to build green eco-conscious ecommerce.",
+      image: "https://www.maydayinternet.com/wp-content/uploads/2026/05/magnific_photorealistic-indian-eco_2938431220-e1780911927429.png",
     },
   ];
 
@@ -86,30 +90,40 @@ export default function Blogs() {
         {/* Blog Post List */}
         <section className="space-y-8">
           {posts.map((post, idx) => (
-            <article key={idx} className="group bg-white dark:bg-surface-dark border border-primary/10 rounded-3xl p-8 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-md cursor-pointer flex flex-col justify-between fade-up">
-              <div>
-                <div className="flex items-center gap-2 select-none mb-4 text-[10px] font-mono text-on-surface-variant">
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
-                  <span>•</span>
-                  <span className="bg-forest-light text-primary px-2 py-0.5 rounded font-bold">
-                    {post.category}
-                  </span>
-                </div>
-                <h2 className="font-display text-xl md:text-2xl font-extrabold text-on-surface group-hover:text-primary transition-colors uppercase leading-snug">
-                  {post.title}
-                </h2>
-                <p className="font-sans text-sm text-on-surface-variant leading-relaxed mt-4">
-                  {post.excerpt}
-                </p>
+            <article key={idx} className="group bg-white dark:bg-surface-dark border border-primary/10 rounded-3xl p-6 md:p-8 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-md cursor-pointer flex flex-col md:flex-row gap-6 md:gap-8 justify-between fade-up items-stretch">
+              <div className="w-full md:w-[280px] shrink-0 aspect-[16/10] rounded-2xl overflow-hidden bg-surface-container shadow-sm border border-primary/5">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
-              <div className="pt-6 border-t border-primary/5 mt-6 flex justify-between items-center select-none">
-                <span className="font-mono text-xs font-bold text-primary flex items-center gap-1">
-                  Read Full Article
-                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </span>
-                <span className="font-sans text-xs text-on-surface-variant opacity-75">By Mayday Editorial</span>
+              <div className="flex flex-col justify-between flex-1">
+                <div>
+                  <div className="flex items-center gap-2 select-none mb-3 text-[11px] font-sans text-on-surface-variant">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                    <span>•</span>
+                    <span className="bg-forest-light text-primary px-2 py-0.5 rounded font-medium">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-on-surface dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    {post.title}
+                  </h2>
+                  <p className="font-sans text-sm text-on-surface-variant dark:text-white/70 leading-relaxed mt-3">
+                    {post.excerpt}
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-primary/5 mt-6 flex justify-between items-center select-none">
+                  <span className="font-mono text-xs font-bold text-primary flex items-center gap-1">
+                    Read Full Article
+                    <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </span>
+                  <span className="font-sans text-xs text-on-surface-variant opacity-75">By Mayday Editorial</span>
+                </div>
               </div>
             </article>
           ))}

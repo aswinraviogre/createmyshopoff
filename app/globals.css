@@ -213,15 +213,48 @@ body {
   opacity: 1;
 }
 
-.build-platform-section .badge-right-2 {
-  transform: translateX(35px) scale(0.9);
-  opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+/* 3D Organic Blob Floating Animations */
+@keyframes float-blob-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(12px, -18px) rotate(3deg) scale(1.03);
+  }
+  66% {
+    transform: translate(-10px, 12px) rotate(-2deg) scale(0.97);
+  }
 }
-.build-platform-section.visible .badge-right-2 {
-  transform: translateX(0) scale(1);
-  opacity: 1;
+
+@keyframes float-blob-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(-16px, 14px) rotate(-4deg) scale(0.98);
+  }
+  66% {
+    transform: translate(14px, -12px) rotate(3deg) scale(1.02);
+  }
 }
 
+@keyframes float-blob-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(8px, -24px) scale(1.04);
+  }
+}
 
+.animate-blob-1 {
+  animation: float-blob-1 16s ease-in-out infinite;
+}
 
+.animate-blob-2 {
+  animation: float-blob-2 20s ease-in-out infinite;
+}
+
+.animate-blob-3 {
+  animation: float-blob-3 14s ease-in-out infinite;
+}

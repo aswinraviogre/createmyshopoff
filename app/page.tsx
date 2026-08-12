@@ -6,6 +6,58 @@ import ContactModal from "@/components/ContactModal";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [activePlatformTab, setActivePlatformTab] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    platform: "Shopify",
+    challenge: "",
+  });
+  const [isHumanVerified, setIsHumanVerified] = useState(true);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const platformFeatures = [
+    {
+      id: "ecommerce-builds",
+      title: "Ecommerce Builds",
+      subtitle: "Stable ecommerce foundations for growth.",
+      href: "/ecommerce-website-development",
+      icon: "shopping_bag",
+      image: "/mockup1.png",
+      badge1: "⚡ Sub-1s Fast Load Time",
+      badge2: "✦ 100% Mobile Optimized",
+      badge3: "✦ Scalable Architecture",
+      badge4: "✦ High Conversion UX",
+      accent: "#22c55e",
+    },
+    {
+      id: "shopify-dev",
+      title: "Shopify Development",
+      subtitle: "Clean Shopify systems built to scale.",
+      href: "/shopify-ecommerce-development",
+      icon: "paid",
+      image: "/mockup2.png",
+      badge1: "✦ Liquid & Hydrogen Experts",
+      badge2: "✦ 99.99% Guaranteed SLA",
+      badge3: "✦ Zero-Friction Checkout",
+      badge4: "✦ Custom App Integrations",
+      accent: "#10b981",
+    },
+    {
+      id: "platform-migration",
+      title: "Platform Migration",
+      subtitle: "Safe migrations protecting revenue and SEO.",
+      href: "/platform-migration",
+      icon: "dns",
+      image: "/mockup4.png",
+      badge1: "✦ 100% SEO Retention",
+      badge2: "✦ Zero Downtime Switch",
+      badge3: "✦ Full Order & Data Transfer",
+      badge4: "✦ Automated URL Mapping",
+      accent: "#16a34a",
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,14 +78,62 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const logos = [
-    "Popees",
-    "Kalyan Silks",
-    "iBell",
-    "Dötch Leather",
-    "Basmat",
-    "Herary",
-    "Fazyo",
+  const brandLogos = [
+    {
+      name: "iBell",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/IBell-e1785302042626.png",
+      className: "h-7 md:h-9",
+    },
+    {
+      name: "Itiha",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Itiha-e1785302089258.png",
+      className: "h-7 md:h-9",
+    },
+    {
+      name: "MoveWell",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/04/image-596-e1785303275368.jpg",
+      className: "h-6 md:h-8",
+    },
+    {
+      name: "Fazyo",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/04/image-601-e1785303322478.jpg",
+      className: "h-6 md:h-8",
+    },
+    {
+      name: "Topco Silver",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Topco-Silver-e1785752707550.png",
+      className: "h-8 md:h-10",
+    },
+    {
+      name: "Ecoair",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Ecoair-e1785302132778.png",
+      className: "h-6 md:h-8",
+    },
+    {
+      name: "Popees Baby Care",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Popees-Baby-Care-e1785302001691.png",
+      className: "h-7 md:h-9",
+    },
+    {
+      name: "Kalyan Silks",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Kalyan-Silks-e1785301947720.png",
+      className: "h-7 md:h-9",
+    },
+    {
+      name: "Basmat",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Basmat-e1785302230475.png",
+      className: "h-7 md:h-9",
+    },
+    {
+      name: "Sitaram Ayurveda",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Sitaram-e1785304226240.png",
+      className: "h-7 md:h-9",
+    },
+    {
+      name: "Mama Miac",
+      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Mama-Miac-e1785304345576.png",
+      className: "h-7 md:h-9",
+    },
   ];
 
   const featuredProjects = [
@@ -93,30 +193,30 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="pt-[140px] md:pt-[180px] pb-12 px-6 md:px-12 max-w-[1400px] mx-auto fade-up relative z-20">
-        <div className="max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-primary font-mono text-[11px] font-semibold uppercase tracking-wider mb-8 border border-primary/5 select-none">
-            <span>✦</span>
+        <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+          <div className="text-on-surface/80 dark:text-white/80 font-sans text-[13px] md:text-[14px] font-medium tracking-wide mb-6 select-none flex items-center justify-center gap-1.5">
+            <span className="text-[12px] text-on-surface/60 dark:text-white/60 font-semibold">+</span>
             Premium Shopify Developers
           </div>
-          <h1 className="font-display text-[42px] md:text-[80px] font-black text-on-surface mb-8 tracking-tighter leading-[1.05] uppercase">
+          <h1 className="font-sans text-[44px] md:text-[80px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.1] max-w-4xl">
             Build e-commerce
             <br />
             that scales with confidence
           </h1>
-          <div className="flex flex-col items-start gap-6 mt-8 pl-0 md:pl-4">
-            <p className="font-sans text-base md:text-[18px] leading-relaxed md:leading-[30px] text-secondary max-w-sm">
+          <div className="flex flex-col items-center gap-8 mt-4 w-full">
+            <p className="font-sans text-base md:text-[18px] leading-relaxed text-secondary dark:text-white/60 max-w-2xl">
               Trusted e-commerce solutions designed to scale with your brand.
             </p>
-            <div className="flex flex-row items-center gap-3 w-full sm:w-auto select-none">
+            <div className="flex flex-row items-center justify-center gap-3 w-full sm:w-auto select-none">
               <button
                 onClick={() => setContactOpen(true)}
-                className="bg-[#b3e620] hover:bg-[#9ccc1c] text-on-surface px-5 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-sm active:scale-95 duration-150 shrink-0"
+                className="bg-[#b3e620] hover:bg-[#a6d71b] text-on-surface px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95 duration-150 cursor-pointer shrink-0"
               >
                 Start a Conversation
               </button>
               <Link
                 href="/recent-projects"
-                className="text-center bg-white border border-outline-variant hover:border-primary text-on-surface px-5 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all active:scale-95 duration-150 shrink-0"
+                className="text-center bg-white dark:bg-transparent border border-outline-variant/60 dark:border-white/10 hover:border-primary text-on-surface dark:text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all shadow-sm hover:shadow-md active:scale-95 duration-150 shrink-0"
               >
                 View Works
               </Link>
@@ -179,28 +279,29 @@ export default function Home() {
 
       {/* Infinite Logo Marquee Ticker */}
       <section className="py-12 bg-white dark:bg-[#181818] border-y border-primary/5 select-none overflow-hidden relative fade-up">
-        <div className="max-w-[1200px] mx-auto px-6 mb-4 text-center">
-          <p className="font-sans text-[11px] font-bold tracking-widest text-secondary uppercase">
+        {/* Soft edge gradient fades */}
+        <div className="absolute inset-y-0 left-0 w-20 md:w-36 bg-gradient-to-r from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 md:w-36 bg-gradient-to-l from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
+
+        <div className="max-w-[1200px] mx-auto px-6 mb-8 text-center">
+          <p className="font-sans text-xs md:text-sm font-medium tracking-normal text-on-surface/80 dark:text-white/80">
             Trusted by growing brands across industries
           </p>
         </div>
-        <div className="w-full overflow-hidden relative mt-6">
-          <div className="flex animate-marquee gap-16 md:gap-24 whitespace-nowrap">
-            {logos.map((logo, idx) => (
-              <span
+        <div className="w-full overflow-hidden relative">
+          <div className="flex animate-marquee gap-14 md:gap-20 items-center whitespace-nowrap">
+            {[...brandLogos, ...brandLogos, ...brandLogos].map((brand, idx) => (
+              <div
                 key={idx}
-                className="font-display text-lg md:text-2xl font-black text-on-surface/40 dark:text-white/20 select-none uppercase tracking-wider inline-block hover:text-primary transition-colors"
+                className="flex items-center justify-center shrink-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
               >
-                {logo}
-              </span>
-            ))}
-            {logos.map((logo, idx) => (
-              <span
-                key={`dup-${idx}`}
-                className="font-display text-lg md:text-2xl font-black text-on-surface/40 dark:text-white/20 select-none uppercase tracking-wider inline-block hover:text-primary transition-colors"
-              >
-                {logo}
-              </span>
+                <img
+                  src={brand.src}
+                  alt={brand.name}
+                  className={`${brand.className} w-auto object-contain pointer-events-none select-none`}
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -467,106 +568,154 @@ export default function Home() {
       </section>
 
       {/* Build & Platform Services */}
-      <section className="py-[120px] px-6 md:px-12 bg-surface build-platform-section fade-up">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="py-[120px] px-6 md:px-12 bg-surface build-platform-section fade-up relative overflow-hidden">
+        {/* Soft background ambient blur glow */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-[#22c55e]/15 via-primary/10 to-transparent blur-[120px] rounded-full pointer-events-none -z-0" />
+
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
-          {/* Left Column: Image with 4 floating badges */}
+          {/* Left Column: Interactive Image Showcase with Animated Floating Badges */}
           <div className="lg:col-span-6 relative flex justify-center items-center py-8 order-last lg:order-first">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[36px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-lg image-container">
+            
+            {/* Ambient Card Shadow / Glow */}
+            <div className="absolute -inset-2 bg-gradient-to-tr from-[#22c55e]/25 via-primary/15 to-transparent blur-2xl rounded-[40px] opacity-75 pointer-events-none" />
+
+            {/* Main Interactive Showcase Image */}
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[32px] md:rounded-[40px] overflow-hidden border border-primary/10 dark:border-white/10 shadow-2xl bg-surface-container group">
               <img
-                className="w-full h-full object-cover"
-                alt="Product developer working on a premium laptop"
-                src="/mockup1.png"
+                key={activePlatformTab}
+                className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+                alt={platformFeatures[activePlatformTab].title}
+                src={platformFeatures[activePlatformTab].image}
               />
-            </div>
-
-            {/* Badge 1 (Top-Left): Interactive mockup check */}
-            <div className="badge-left-1 absolute top-[15%] -left-4 md:-left-8 z-30 flex">
-              <div className="animate-float-slow bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
-                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
-                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
-                </div>
-                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Interactive mockup check</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Bottom Active Label Indicator */}
+              <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white select-none pointer-events-none">
+                <span className="font-sans text-xs font-semibold tracking-wide drop-shadow-md">
+                  {platformFeatures[activePlatformTab].title}
+                </span>
+                <span className="font-mono text-[10px] uppercase bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  Interactive Preview
+                </span>
               </div>
             </div>
 
-            {/* Badge 2 (Bottom-Left): Built to scale with growth */}
-            <div className="badge-left-2 absolute bottom-[18%] -left-6 md:-left-12 z-30 flex">
-              <div className="animate-float-fast bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
-                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
-                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+            {/* Badge 1 (Top-Left): Primary Advantage */}
+            <div className="absolute top-[10%] -left-3 md:-left-6 z-30 flex animate-float-slow select-none">
+              <div className="bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md text-on-surface p-2.5 pr-4 rounded-full flex items-center gap-2.5 shadow-xl border border-primary/10">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-md">
+                  <span className="material-symbols-outlined text-white text-base">verified</span>
                 </div>
-                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Built to scale with growth</span>
+                <span className="font-sans text-[11px] font-bold text-on-surface dark:text-white leading-tight">
+                  {platformFeatures[activePlatformTab].badge1}
+                </span>
               </div>
             </div>
 
-            {/* Badge 3 (Middle-Right): Stable during traffic spikes */}
-            <div className="badge-right-1 absolute top-[48%] -right-4 md:-right-8 z-30 flex">
-              <div className="animate-float-medium bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
-                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
-                  <span className="material-symbols-outlined text-white text-base">check_circle</span>
+            {/* Badge 2 (Bottom-Left): Speed & Performance */}
+            <div className="absolute bottom-[16%] -left-4 md:-left-8 z-30 flex animate-float-fast select-none">
+              <div className="bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md text-on-surface p-2.5 pr-4 rounded-full flex items-center gap-2.5 shadow-xl border border-primary/10">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shrink-0 shadow-md">
+                  <span className="material-symbols-outlined text-white text-base">speed</span>
                 </div>
-                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ Stable during traffic spikes</span>
+                <span className="font-sans text-[11px] font-bold text-on-surface dark:text-white leading-tight">
+                  {platformFeatures[activePlatformTab].badge2}
+                </span>
               </div>
             </div>
 
-            {/* Badge 4 (Bottom-Right): SEO-safe migrations */}
-            <div className="badge-right-2 absolute bottom-[8%] right-[10%] z-30 flex">
-              <div className="animate-float-slow bg-white text-on-surface p-2 pr-5 rounded-full flex items-center gap-2 shadow-lg select-none border border-primary/5">
-                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+            {/* Badge 3 (Middle-Right): Live Pulsing Status */}
+            <div className="absolute top-[40%] -right-3 md:-right-6 z-30 flex animate-float-medium select-none">
+              <div className="bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md text-on-surface p-2.5 pr-4 rounded-full flex items-center gap-2.5 shadow-xl border border-primary/10">
+                <div className="relative flex items-center justify-center w-3 h-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#22c55e]"></span>
+                </div>
+                <span className="font-sans text-[11px] font-bold text-on-surface dark:text-white leading-tight">
+                  {platformFeatures[activePlatformTab].badge3}
+                </span>
+              </div>
+            </div>
+
+            {/* Badge 4 (Bottom-Right): Architecture Metric */}
+            <div className="badge-right-2 absolute bottom-[8%] right-[8%] z-30 flex animate-float-slow select-none">
+              <div className="bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md text-on-surface p-2.5 pr-4 rounded-full flex items-center gap-2.5 shadow-xl border border-primary/10">
+                <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center shrink-0 shadow-md">
                   <span className="material-symbols-outlined text-white text-base">check_circle</span>
                 </div>
-                <span className="font-sans text-[11px] font-bold text-on-surface leading-tight">✦ SEO-safe migrations</span>
+                <span className="font-sans text-[11px] font-bold text-on-surface dark:text-white leading-tight">
+                  {platformFeatures[activePlatformTab].badge4}
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Title & Capsules List */}
+          {/* Right Column: Title & Interactive Capsules List */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 fade-up">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none text-primary">
                 <span>✦</span>
                 <span className="font-semibold">Platform Build</span>
               </div>
-              <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase tracking-tight leading-none">
+              <h2 className="font-sans text-3xl md:text-5xl font-bold text-on-surface dark:text-white tracking-tight leading-tight">
                 Build &amp; Platform
               </h2>
-              <p className="font-sans text-base text-on-surface-variant mt-4 leading-relaxed">
+              <p className="font-sans text-base text-on-surface-variant dark:text-white/70 mt-4 leading-relaxed">
                 We build stable platforms that are ready to grow with your business.
               </p>
             </div>
 
-            {/* Capsules List */}
+            {/* Interactive Capsules List */}
             <div className="space-y-4">
-              <Link href="/ecommerce-website-development" className="flex items-center gap-4 bg-white/60 dark:bg-white/5 border border-primary/5 hover:border-primary/20 p-3 pr-6 rounded-full hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white flex items-center justify-center shrink-0 group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
-                </div>
-                <div className="flex flex-col text-left">
-                  <h4 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-[#22c55e] transition-colors leading-tight">Ecommerce Builds</h4>
-                  <p className="font-sans text-xs text-secondary mt-0.5">Stable ecommerce foundations for growth.</p>
-                </div>
-              </Link>
-
-              <Link href="/shopify-ecommerce-development" className="flex items-center gap-4 bg-white/60 dark:bg-white/5 border border-primary/5 hover:border-primary/20 p-3 pr-6 rounded-full hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white flex items-center justify-center shrink-0 group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-[20px]">paid</span>
-                </div>
-                <div className="flex flex-col text-left">
-                  <h4 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-[#22c55e] transition-colors leading-tight">Shopify Development</h4>
-                  <p className="font-sans text-xs text-secondary mt-0.5">Clean Shopify systems built to scale.</p>
-                </div>
-              </Link>
-
-              <Link href="/platform-migration" className="flex items-center gap-4 bg-white/60 dark:bg-white/5 border border-primary/5 hover:border-primary/20 p-3 pr-6 rounded-full hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-full bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white flex items-center justify-center shrink-0 group-hover:bg-[#22c55e] group-hover:text-white transition-colors duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-[20px]">dns</span>
-                </div>
-                <div className="flex flex-col text-left">
-                  <h4 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-[#22c55e] transition-colors leading-tight">Platform Migration</h4>
-                  <p className="font-sans text-xs text-secondary mt-0.5">Safe migrations protecting revenue and SEO.</p>
-                </div>
-              </Link>
+              {platformFeatures.map((item, idx) => {
+                const isActive = activePlatformTab === idx;
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    onMouseEnter={() => setActivePlatformTab(idx)}
+                    className={`flex items-center gap-4 p-3.5 pr-6 rounded-full transition-all duration-300 group cursor-pointer border ${
+                      isActive
+                        ? "bg-white dark:bg-white/10 border-primary/30 dark:border-white/25 shadow-lg scale-[1.02]"
+                        : "bg-white/60 dark:bg-white/5 border-primary/5 dark:border-white/5 hover:border-primary/20 hover:bg-white dark:hover:bg-white/10 hover:shadow-md hover:scale-[1.01]"
+                    } active:scale-[0.99]`}
+                  >
+                    <div
+                      className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm ${
+                        isActive
+                          ? "bg-[#22c55e] text-white"
+                          : "bg-[#f2f4f2] dark:bg-white/5 text-on-surface-variant dark:text-white group-hover:bg-[#22c55e] group-hover:text-white"
+                      }`}
+                    >
+                      <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <h4
+                        className={`font-sans text-sm md:text-base font-bold transition-colors leading-tight ${
+                          isActive
+                            ? "text-[#22c55e]"
+                            : "text-on-surface dark:text-white group-hover:text-[#22c55e]"
+                        }`}
+                      >
+                        {item.title}
+                      </h4>
+                      <p className="font-sans text-xs text-secondary dark:text-white/60 mt-0.5">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                    <span
+                      className={`material-symbols-outlined text-[18px] ml-auto transition-all duration-300 ${
+                        isActive
+                          ? "text-[#22c55e] translate-x-1 opacity-100"
+                          : "text-on-surface-variant/40 dark:text-white/40 group-hover:text-[#22c55e] group-hover:translate-x-1 opacity-0 group-hover:opacity-100"
+                      }`}
+                    >
+                      arrow_forward
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
           
@@ -688,27 +837,189 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Book a Meeting / Fit Assessment Section */}
-      <section id="contact" className="py-[80px] px-6 md:px-12 bg-white dark:bg-[#181818] border-t border-primary/5">
-        <div className="max-w-[1200px] mx-auto text-center space-y-6 fade-up">
-          <div className="inline-flex items-center gap-2 bg-forest-light text-primary px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider select-none border border-primary/5">
-            <span className="material-symbols-outlined text-[16px]">forum</span>
-            Let's Talk
+      {/* Book a Meeting / Fit Assessment Section with 3D Abstract Background & Form Card */}
+      <section
+        id="contact"
+        className="relative py-[100px] md:py-[140px] px-6 md:px-12 overflow-hidden bg-[#faf8f5] dark:bg-[#111111] border-t border-primary/5"
+      >
+        {/* 3D Abstract Blob Background Video */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/aniamted_videos_of_this_image.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle contrast overlay for crystal-clear readability */}
+          <div className="absolute inset-0 bg-black/5 dark:bg-black/40 pointer-events-none" />
+        </div>
+
+        {/* Centered Main Content Container */}
+        <div className="max-w-[1200px] mx-auto text-center relative z-20">
+          
+          {/* Header Title & Subtitle */}
+          <div className="max-w-[800px] mx-auto text-center space-y-4 mb-10 fade-up">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/90 dark:bg-white/10 backdrop-blur-md border border-black/10 dark:border-white/15 text-gray-800 dark:text-white font-sans text-xs font-semibold select-none shadow-sm">
+              <span>✦</span> Next Steps
+            </div>
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+              Let&apos;s See If We&apos;re a Good Fit
+            </h2>
+            <p className="font-sans text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl mx-auto font-normal">
+              A short conversation to understand your goals and assess alignment—no sales pitch.
+            </p>
           </div>
-          <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase tracking-tight">
-            Book a Conversation
-          </h2>
-          <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed max-w-xl mx-auto">
-            Not a sales call. An honest 30-minute conversation to understand where you are, what's not working, and whether we're the right fit.
-          </p>
-          <div className="pt-4 select-none">
-            <button
-              onClick={() => setContactOpen(true)}
-              className="inline-flex items-center gap-2 bg-primary hover:bg-forest-deep text-white px-8 py-3.5 rounded-full font-mono text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow-md select-none active:scale-95 duration-150"
-            >
-              Start Assessing Fit
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </button>
+
+          {/* Centered Pure White Fit Assessment Form Card */}
+          <div className="max-w-[540px] w-full mx-auto bg-white dark:bg-[#1a1a1a] rounded-[28px] md:rounded-[32px] p-6 sm:p-8 md:p-9 shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-gray-100 dark:border-white/10 relative z-20 fade-up">
+            <div className="text-center mb-6">
+              <span className="font-sans text-xs sm:text-sm font-semibold text-gray-800 dark:text-white/90">
+                ✦ Share a few details so we can <span className="font-bold">assess fit.</span>
+              </span>
+            </div>
+
+            {formSubmitted ? (
+              <div className="py-10 text-center space-y-4 animate-fade-in">
+                <div className="w-16 h-16 bg-[#b3e620]/20 text-primary dark:text-[#b3e620] rounded-full flex items-center justify-center mx-auto">
+                  <span className="material-symbols-outlined text-3xl">check_circle</span>
+                </div>
+                <h3 className="font-sans text-xl font-bold text-gray-900 dark:text-white">Request Received!</h3>
+                <p className="font-sans text-xs sm:text-sm text-gray-600 dark:text-gray-300 max-w-sm mx-auto">
+                  Thank you for reaching out. We&apos;ll review your details and get back to you within 24 hours.
+                </p>
+                <button
+                  onClick={() => setFormSubmitted(false)}
+                  className="text-xs font-mono font-semibold text-primary dark:text-[#b3e620] underline mt-4 cursor-pointer"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setFormSubmitted(true);
+                }}
+                className="space-y-4 text-left"
+              >
+                {/* Row 1: Name & Email */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="block font-sans text-xs font-semibold text-gray-700 dark:text-gray-300">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Your name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-[#f6f6f6] dark:bg-white/5 border border-transparent focus:border-primary/30 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-on-surface dark:text-white placeholder:text-gray-400 focus:outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="block font-sans text-xs font-semibold text-gray-700 dark:text-gray-300">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="Your email address"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-[#f6f6f6] dark:bg-white/5 border border-transparent focus:border-primary/30 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-on-surface dark:text-white placeholder:text-gray-400 focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Phone No & Current Platform */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="block font-sans text-xs font-semibold text-gray-700 dark:text-gray-300">
+                      Phone No
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="Your phone number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-[#f6f6f6] dark:bg-white/5 border border-transparent focus:border-primary/30 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-on-surface dark:text-white placeholder:text-gray-400 focus:outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="block font-sans text-xs font-semibold text-gray-700 dark:text-gray-300">
+                      Current Platform
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Shopify"
+                      value={formData.platform}
+                      onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
+                      className="w-full bg-[#f6f6f6] dark:bg-white/5 border border-transparent focus:border-primary/30 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-on-surface dark:text-white placeholder:text-gray-400 focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 3: Primary Challenge */}
+                <div className="space-y-1.5">
+                  <label className="block font-sans text-xs font-semibold text-gray-700 dark:text-gray-300">
+                    Primary Challenge
+                  </label>
+                  <textarea
+                    rows={3}
+                    placeholder="Briefly describe your main challenge or goal"
+                    value={formData.challenge}
+                    onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
+                    className="w-full bg-[#f6f6f6] dark:bg-white/5 border border-transparent focus:border-primary/30 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-on-surface dark:text-white placeholder:text-gray-400 focus:outline-none transition-all resize-none"
+                  />
+                </div>
+
+                {/* Cloudflare Turnstile Human Check Mockup */}
+                <div
+                  onClick={() => setIsHumanVerified(!isHumanVerified)}
+                  className="flex items-center justify-between p-3.5 bg-[#fbfbfb] dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl cursor-pointer select-none hover:bg-gray-50 dark:hover:bg-white/10 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-6 h-6 rounded-md border flex items-center justify-center transition-all ${
+                        isHumanVerified
+                          ? "bg-[#22c55e] border-[#22c55e] text-white shadow-sm"
+                          : "border-gray-300 dark:border-white/20 bg-white dark:bg-black/20"
+                      }`}
+                    >
+                      {isHumanVerified && (
+                        <span className="material-symbols-outlined text-sm font-bold">check</span>
+                      )}
+                    </div>
+                    <span className="font-sans text-xs font-medium text-gray-700 dark:text-gray-300">
+                      Verify you are human
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-right">
+                    <div className="flex flex-col items-end">
+                      <span className="font-sans text-[10px] font-bold text-orange-600 tracking-wider">
+                        CLOUDFLARE
+                      </span>
+                      <span className="text-[8px] text-gray-400">Privacy • Terms</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full bg-[#b3e620] hover:bg-[#9ccc1c] active:scale-[0.99] text-gray-900 font-sans text-xs sm:text-sm font-semibold py-3.5 px-6 rounded-full transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer text-center select-none"
+                  >
+                    Start the Conversation
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </section>
@@ -738,65 +1049,83 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 fade-up">
             {/* Blog Post 1 */}
             <Link
               href="/blogs"
-              className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl overflow-hidden flex flex-col justify-between h-full hover:shadow-md transition-shadow p-6 group"
+              className="flex flex-col group cursor-pointer"
             >
-              <div>
-                <div className="flex justify-between items-center text-[10px] font-mono text-on-surface-variant mb-4 select-none">
-                  <span>July 27, 2026 • 8 min</span>
-                  <span className="bg-forest-light px-2 py-0.5 rounded text-primary">Checkouts</span>
-                </div>
-                <h3 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug line-clamp-4">
+              <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-surface-container shadow-sm border border-primary/5">
+                <img
+                  src="https://www.maydayinternet.com/wp-content/uploads/2026/07/Why-Shopify-Transaction.png"
+                  alt="Why Shopify Transaction Fees Don’t Apply"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-xs font-sans text-secondary dark:text-white/60 mb-2">
+                  July 27, 2026 • 8 min Read
+                </span>
+                <h3 className="font-sans text-sm md:text-[15px] font-semibold text-on-surface dark:text-white group-hover:text-primary transition-colors leading-snug line-clamp-3 mb-3">
                   Why Shopify Transaction Fees Don’t Apply to Quick Checkouts Like GoKwik, Razorpay Magic Checkout &amp; Shopflo in India — and How Long This Will Last
                 </h3>
+                <div className="inline-flex items-center text-[11px] font-medium px-2.5 py-1 rounded-md bg-[#f2f4f2] dark:bg-white/5 text-on-surface/80 dark:text-white/80 border border-primary/5">
+                  Checkouts • Shopify
+                </div>
               </div>
-              <span className="text-xs font-mono font-bold text-primary flex items-center gap-1 mt-6">
-                Read Article
-                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </span>
             </Link>
 
             {/* Blog Post 2 */}
             <Link
               href="/blogs"
-              className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl overflow-hidden flex flex-col justify-between h-full hover:shadow-md transition-shadow p-6 group"
+              className="flex flex-col group cursor-pointer"
             >
-              <div>
-                <div className="flex justify-between items-center text-[10px] font-mono text-on-surface-variant mb-4 select-none">
-                  <span>June 11, 2026 • 8 min</span>
-                  <span className="bg-forest-light px-2 py-0.5 rounded text-primary">Payment Gateways</span>
-                </div>
-                <h3 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug line-clamp-4">
+              <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-surface-container shadow-sm border border-primary/5">
+                <img
+                  src="https://www.maydayinternet.com/wp-content/uploads/2026/06/Payment-Gateway-Reconciliation-scaled.jpeg"
+                  alt="Payment Gateway Reconciliation"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-xs font-sans text-secondary dark:text-white/60 mb-2">
+                  June 11, 2026 • 8 min Read
+                </span>
+                <h3 className="font-sans text-sm md:text-[15px] font-semibold text-on-surface dark:text-white group-hover:text-primary transition-colors leading-snug line-clamp-3 mb-3">
                   Payment Gateway Reconciliation for Indian E-commerce: Methods, Software, GST &amp; Best Practices
                 </h3>
+                <div className="inline-flex items-center text-[11px] font-medium px-2.5 py-1 rounded-md bg-[#f2f4f2] dark:bg-white/5 text-on-surface/80 dark:text-white/80 border border-primary/5">
+                  Ecommerce • Payment Gateway
+                </div>
               </div>
-              <span className="text-xs font-mono font-bold text-primary flex items-center gap-1 mt-6">
-                Read Article
-                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </span>
             </Link>
 
             {/* Blog Post 3 */}
             <Link
               href="/blogs"
-              className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl overflow-hidden flex flex-col justify-between h-full hover:shadow-md transition-shadow p-6 group"
+              className="flex flex-col group cursor-pointer"
             >
-              <div>
-                <div className="flex justify-between items-center text-[10px] font-mono text-on-surface-variant mb-4 select-none">
-                  <span>June 8, 2026 • 8 min</span>
-                  <span className="bg-forest-light px-2 py-0.5 rounded text-primary">Shopify</span>
-                </div>
-                <h3 className="font-sans text-sm md:text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug line-clamp-4">
+              <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-surface-container shadow-sm border border-primary/5">
+                <img
+                  src="https://www.maydayinternet.com/wp-content/uploads/2026/05/magnific_photorealistic-indian-eco_2938431220-e1780911927429.png"
+                  alt="Engineering Greener Ecosystems"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-xs font-sans text-secondary dark:text-white/60 mb-2">
+                  June 8, 2026 • 8 min Read
+                </span>
+                <h3 className="font-sans text-sm md:text-[15px] font-semibold text-on-surface dark:text-white group-hover:text-primary transition-colors leading-snug line-clamp-3 mb-3">
                   Engineering Greener Ecosystems: The Mayday Internet Sustainability Framework
                 </h3>
+                <div className="inline-flex items-center text-[11px] font-medium px-2.5 py-1 rounded-md bg-[#f2f4f2] dark:bg-white/5 text-on-surface/80 dark:text-white/80 border border-primary/5">
+                  Shopify
+                </div>
               </div>
-              <span className="text-xs font-mono font-bold text-primary flex items-center gap-1 mt-6">
-                Read Article
-                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </span>
             </Link>
           </div>
         </div>
