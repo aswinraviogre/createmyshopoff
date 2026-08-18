@@ -10,7 +10,7 @@ export default function WhatsAppAutomation({ onContactClick }: WhatsAppAutomatio
   const [chatStep, setChatStep] = useState(0);
   const [pulseActive, setPulseActive] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   // Check for prefers-reduced-motion
   useEffect(() => {
@@ -63,8 +63,8 @@ export default function WhatsAppAutomation({ onContactClick }: WhatsAppAutomatio
 
   // Scroll chat window to bottom on new messages
   useEffect(() => {
-    if (chatEndRef.current) {
-      chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [chatStep]);
 
@@ -275,7 +275,7 @@ export default function WhatsAppAutomation({ onContactClick }: WhatsAppAutomatio
                 </div>
 
                 {/* Chat Log Viewport */}
-                <div className="flex-1 p-3 space-y-2.5 overflow-y-auto bg-[#efeae2] dark:bg-[#0c0f0d] scrollbar-none relative flex flex-col justify-start">
+                <div ref={chatContainerRef} className="flex-1 p-3 space-y-2.5 overflow-y-auto bg-[#efeae2] dark:bg-[#0c0f0d] scrollbar-none relative flex flex-col justify-start">
                   
                   {/* Message 1: Customer */}
                   {(reducedMotion || chatStep >= 0) && (
@@ -358,8 +358,6 @@ export default function WhatsAppAutomation({ onContactClick }: WhatsAppAutomatio
                     </div>
                   )}
 
-                  {/* Scroll Target */}
-                  <div ref={chatEndRef} />
                 </div>
               </div>
 
