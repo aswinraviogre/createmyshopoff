@@ -258,3 +258,72 @@ body {
 .animate-blob-3 {
   animation: float-blob-3 14s ease-in-out infinite;
 }
+
+/* Shopify App Dev Section Animations */
+.stroke-dasharray-100 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.stroke-dasharray-0 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+}
+
+.stroke-dasharray-pulse {
+  stroke-dasharray: 4 20;
+}
+
+@keyframes pulseTravel {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: -24;
+  }
+}
+
+.stroke-dashoffset-pulse {
+  animation: pulseTravel 3s linear infinite;
+}
+
+/* WhatsApp Automation Section Animations */
+@keyframes whatsappGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-whatsapp-glow {
+  animation: whatsappGlow 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom dashed border for Shopify-WhatsApp connector bridge */
+.border-gradient-green {
+  border-color: #5e8e3e;
+}
+.dark .border-gradient-green {
+  border-color: #95bf47;
+}
+
+

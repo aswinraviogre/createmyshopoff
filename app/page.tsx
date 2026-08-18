@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ContactModal from "@/components/ContactModal";
+import { CLIENT_PROJECTS, FEATURED_PROJECTS } from "@/data/projects";
+import ShopifyAppDev from "@/components/ShopifyAppDev";
+import WhatsAppAutomation from "@/components/WhatsAppAutomation";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -24,7 +27,7 @@ export default function Home() {
       subtitle: "Stable ecommerce foundations for growth.",
       href: "/ecommerce-website-development",
       icon: "shopping_bag",
-      image: "/mockup1.png",
+      image: "/projects/taruni.webp",
       badge1: "⚡ Sub-1s Fast Load Time",
       badge2: "✦ 100% Mobile Optimized",
       badge3: "✦ Scalable Architecture",
@@ -37,7 +40,7 @@ export default function Home() {
       subtitle: "Clean Shopify systems built to scale.",
       href: "/shopify-ecommerce-development",
       icon: "paid",
-      image: "/mockup2.png",
+      image: "/projects/malika-clothing.webp",
       badge1: "✦ Liquid & Hydrogen Experts",
       badge2: "✦ 99.99% Guaranteed SLA",
       badge3: "✦ Zero-Friction Checkout",
@@ -50,7 +53,7 @@ export default function Home() {
       subtitle: "Safe migrations protecting revenue and SEO.",
       href: "/platform-migration",
       icon: "dns",
-      image: "/mockup4.png",
+      image: "/projects/beyond-be-bella.webp",
       badge1: "✦ 100% SEO Retention",
       badge2: "✦ Zero Downtime Switch",
       badge3: "✦ Full Order & Data Transfer",
@@ -136,59 +139,6 @@ export default function Home() {
     },
   ];
 
-  const featuredProjects = [
-    {
-      title: "Popees Baby Care",
-      tag: "Shopify Redesign",
-      image: "/mockup1.png",
-      href: "https://popees.com/",
-    },
-    {
-      title: "Kalyan Silks India",
-      tag: "Shopify Redesign",
-      image: "/mockup2.png",
-      href: "https://kalyansilks.com/",
-    },
-    {
-      title: "iBell Home Appliances",
-      tag: "Shopify Redesign",
-      image: "/mockup4.png",
-      href: "https://ibellstore.com/",
-    },
-  ];
-
-  const mockups = [
-    {
-      src: "/mockup3.png",
-      alt: "Dötch Leather Store Bag Showcase",
-      title: "DÖTCH",
-      label: "Dotch Leather UK",
-      isSerif: true,
-    },
-    {
-      src: "/mockup2.png",
-      alt: "Kalyan Silks India Showcase",
-      title: "KALYAN",
-      label: "Kalyan Silks India",
-      isSerif: false,
-      hasWhatsapp: true,
-    },
-    {
-      src: "/mockup1.png",
-      alt: "Popees Baby Care Showcase",
-      title: "POPEES",
-      label: "Popees Baby Care",
-      isSerif: false,
-    },
-    {
-      src: "/mockup4.png",
-      alt: "iBell Home Appliances Showcase",
-      title: "iBELL",
-      label: "iBell Home Appliances",
-      isSerif: false,
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -225,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Infinite Image Marquee */}
+      {/* Infinite Image Marquee with Real Client Projects */}
       <section className="py-8 bg-white dark:bg-[#181818] overflow-hidden relative z-20 fade-up">
         {/* Soft edge gradients */}
         <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
@@ -233,45 +183,39 @@ export default function Home() {
         
         <div className="w-full overflow-hidden relative">
           <div className="flex animate-marquee-images gap-6 whitespace-nowrap animate-once">
-            {[...mockups, ...mockups, ...mockups, ...mockups].map((mockup, idx) => (
-              <div 
-                key={idx}
-                className="w-[280px] sm:w-[380px] md:w-[460px] aspect-[16/10] bg-surface-container rounded-2xl md:rounded-[28px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-500 shrink-0 inline-block relative select-none"
+            {[...CLIENT_PROJECTS, ...CLIENT_PROJECTS].map((project, idx) => (
+              <a 
+                key={`${project.id}-${idx}`}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[280px] sm:w-[380px] md:w-[460px] aspect-[16/10] bg-surface-container rounded-2xl md:rounded-[28px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-500 shrink-0 inline-block relative select-none group cursor-pointer"
               >
                 {/* Background Image */}
                 <img 
-                  src={mockup.src} 
-                  alt={mockup.alt}
-                  className="w-full h-full object-cover"
+                  src={project.image} 
+                  alt={project.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
 
                 {/* Gradient overlay for better text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
-
-                {/* Center text overlay */}
-                {mockup.title && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className={`text-white tracking-widest text-3xl md:text-5xl font-black uppercase select-none opacity-90 drop-shadow-md ${mockup.isSerif ? 'font-serif' : 'font-display'}`}>
-                      {mockup.title}
-                    </span>
-                  </div>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
 
                 {/* Bottom Left tag/badge */}
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                  {mockup.hasWhatsapp && (
-                    <div className="w-9 h-9 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-md animate-bounce shrink-0">
-                      <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.45 5.515.003 10.002-4.482 10.005-9.999.002-2.673-1.04-5.186-2.936-7.086-1.896-1.9-4.41-2.946-7.08-2.948-5.52 0-10.008 4.484-10.01 10.002-.001 1.747.502 3.447 1.461 4.969L1.082 22.9l6.566-1.746zm11.758-6.173c-.297-.149-1.758-.868-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/>
-                      </svg>
-                    </div>
-                  )}
-                  <span className="bg-white/95 text-on-surface px-3 py-1.5 rounded-[10px] font-sans text-[10px] font-bold shadow-sm select-none border border-primary/5">
-                    {mockup.label}
+                  <span className="bg-white/95 text-on-surface px-3 py-1.5 rounded-[10px] font-sans text-[10px] font-bold shadow-sm select-none border border-primary/5 flex items-center gap-1.5">
+                    <span>{project.name}</span>
+                    <span className="text-primary/70 font-mono text-[9px]">· {project.category}</span>
                   </span>
                 </div>
-              </div>
+
+                {/* Top Right "Visit" indicator on hover */}
+                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white/90 px-2.5 py-1 rounded-full font-mono text-[9px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                  <span>Visit</span>
+                  <span className="material-symbols-outlined text-[12px]">open_in_new</span>
+                </div>
+              </a>
             ))}
           </div>
         </div>
@@ -344,56 +288,63 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-forest-deep/20 to-transparent pointer-events-none"></div>
       </section>
 
-      {/* Selected Works - Rebuilt with image visual cards */}
+      {/* Shopify App Development Section */}
+      <ShopifyAppDev onContactClick={() => setContactOpen(true)} />
+
+      {/* WhatsApp Ecommerce Automation Section */}
+      <WhatsAppAutomation onContactClick={() => setContactOpen(true)} />
+
+      {/* Selected Works - Real Client Projects */}
       <section className="py-[120px] px-6 md:px-12 bg-white dark:bg-[#181818] border-b border-primary/5">
         <div className="max-w-[1200px] mx-auto space-y-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 fade-up">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none">
                 <span className="material-symbols-outlined text-primary text-[14px]">star</span>
-                <span className="text-primary font-semibold">Showcase</span>
+                <span className="text-primary font-semibold">Our Recent Work</span>
               </div>
               <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase">
                 Featured Projects
               </h2>
               <p className="font-sans text-base text-on-surface-variant mt-2">
-                Careful engineering delivering high-performance commerce results.
+                A selection of brands we've helped build, transform and grow across fashion, beauty, wellness, food, gifting and more.
               </p>
             </div>
             <Link
               href="/recent-projects"
               className="border border-primary text-primary px-6 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider hover:bg-primary hover:text-white transition-colors duration-300 flex items-center gap-2 w-max select-none cursor-pointer"
             >
-              All Projects
+              All 16 Projects
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-up">
-            {featuredProjects.map((project, idx) => (
-              <article key={idx} className="group bg-surface dark:bg-surface-dark rounded-[24px] border border-primary/10 overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up">
+            {FEATURED_PROJECTS.map((project) => (
+              <article key={project.id} className="group bg-surface dark:bg-surface-dark rounded-[24px] border border-primary/10 overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
                 <div>
                   <div className="h-[220px] relative bg-surface-container overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                       style={{ backgroundImage: `url('${project.image}')` }}
+                      aria-label={project.alt}
                     />
                     <div className="absolute top-4 left-4 bg-white/90 dark:bg-surface-dark/90 font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full text-primary border border-primary/5 select-none shadow-sm font-bold">
-                      {project.tag}
+                      {project.category} {project.location ? `· ${project.location}` : ""}
                     </div>
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-[20px] font-extrabold text-on-surface mb-2 uppercase line-clamp-1">
-                      {project.title}
+                      {project.name}
                     </h3>
                     <p className="font-sans text-xs text-on-surface-variant opacity-80 leading-relaxed">
-                      Custom Shopify frontend integration optimized for speed, engagement, and conversion rates.
+                      {project.description}
                     </p>
                   </div>
                 </div>
                 <div className="px-6 pb-6 pt-2 select-none">
                   <a
-                    href={project.href}
+                    href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-primary hover:text-forest-deep transition-colors"
@@ -529,8 +480,8 @@ export default function Home() {
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[36px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-lg image-container">
               <img
                 className="w-full h-full object-cover"
-                alt="eCommerce Leader working on a phone in workspace"
-                src="/mockup2.png"
+                alt="Beyond Be Bella E-Commerce Store Showcase"
+                src="/projects/beyond-be-bella.webp"
               />
             </div>
 
