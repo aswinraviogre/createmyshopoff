@@ -81,63 +81,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const brandLogos = [
-    {
-      name: "iBell",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/IBell-e1785302042626.png",
-      className: "h-7 md:h-9",
-    },
-    {
-      name: "Itiha",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Itiha-e1785302089258.png",
-      className: "h-7 md:h-9",
-    },
-    {
-      name: "MoveWell",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/04/image-596-e1785303275368.jpg",
-      className: "h-6 md:h-8",
-    },
-    {
-      name: "Fazyo",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/04/image-601-e1785303322478.jpg",
-      className: "h-6 md:h-8",
-    },
-    {
-      name: "Topco Silver",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Topco-Silver-e1785752707550.png",
-      className: "h-8 md:h-10",
-    },
-    {
-      name: "Ecoair",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Ecoair-e1785302132778.png",
-      className: "h-6 md:h-8",
-    },
-    {
-      name: "Popees Baby Care",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Popees-Baby-Care-e1785302001691.png",
-      className: "h-7 md:h-9",
-    },
-    {
-      name: "Kalyan Silks",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Kalyan-Silks-e1785301947720.png",
-      className: "h-7 md:h-9",
-    },
-    {
-      name: "Basmat",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Basmat-e1785302230475.png",
-      className: "h-7 md:h-9",
-    },
-    {
-      name: "Sitaram Ayurveda",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Sitaram-e1785304226240.png",
-      className: "h-7 md:h-9",
-    },
-    {
-      name: "Mama Miac",
-      src: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Mama-Miac-e1785304345576.png",
-      className: "h-7 md:h-9",
-    },
-  ];
+
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -175,54 +119,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Infinite Image Marquee with Real Client Projects */}
-      <section className="py-8 bg-white dark:bg-[#181818] overflow-hidden relative z-20 fade-up">
-        {/* Soft edge gradients */}
-        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
-        
-        <div className="w-full overflow-hidden relative">
-          <div className="flex animate-marquee-images gap-6 whitespace-nowrap animate-once">
-            {[...CLIENT_PROJECTS, ...CLIENT_PROJECTS].map((project, idx) => (
-              <a 
-                key={`${project.id}-${idx}`}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-[280px] sm:w-[380px] md:w-[460px] aspect-[16/10] bg-surface-container rounded-2xl md:rounded-[28px] overflow-hidden border border-primary/10 dark:border-white/5 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-500 shrink-0 inline-block relative select-none group cursor-pointer"
-              >
-                {/* Background Image */}
-                <img 
-                  src={project.image} 
-                  alt={project.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-
-                {/* Gradient overlay for better text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
-
-                {/* Bottom Left tag/badge */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                  <span className="bg-white/95 text-on-surface px-3 py-1.5 rounded-[10px] font-sans text-[10px] font-bold shadow-sm select-none border border-primary/5 flex items-center gap-1.5">
-                    <span>{project.name}</span>
-                    <span className="text-primary/70 font-mono text-[9px]">· {project.category}</span>
-                  </span>
-                </div>
-
-                {/* Top Right "Visit" indicator on hover */}
-                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white/90 px-2.5 py-1 rounded-full font-mono text-[9px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                  <span>Visit</span>
-                  <span className="material-symbols-outlined text-[12px]">open_in_new</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Infinite Logo Marquee Ticker */}
-      <section className="py-12 bg-white dark:bg-[#181818] border-y border-primary/5 select-none overflow-hidden relative fade-up">
+      {/* Pure Logo-Style Marquee Ticker (Matching Reference Image) */}
+      <section className="py-12 bg-white dark:bg-[#181818] border-y border-primary/5 dark:border-white/5 select-none overflow-hidden relative fade-up">
         {/* Soft edge gradient fades */}
         <div className="absolute inset-y-0 left-0 w-20 md:w-36 bg-gradient-to-r from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-20 md:w-36 bg-gradient-to-l from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
@@ -232,24 +130,31 @@ export default function Home() {
             Trusted by growing brands across industries
           </p>
         </div>
+
         <div className="w-full overflow-hidden relative">
           <div className="flex animate-marquee gap-14 md:gap-20 items-center whitespace-nowrap">
-            {[...brandLogos, ...brandLogos, ...brandLogos].map((brand, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center shrink-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
+            {[...CLIENT_PROJECTS, ...CLIENT_PROJECTS, ...CLIENT_PROJECTS].map((project, idx) => (
+              <a 
+                key={`${project.id}-${idx}`}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`${project.name} · ${project.category}`}
+                className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105 select-none cursor-pointer"
               >
-                <img
-                  src={brand.src}
-                  alt={brand.name}
-                  className={`${brand.className} w-auto object-contain pointer-events-none select-none`}
+                <img 
+                  src={project.image} 
+                  alt={project.alt || project.name}
+                  className="h-7 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain pointer-events-none select-none"
                   loading="lazy"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
+
+
 
       {/* Statement & Values Section (Dark variant) */}
       <section className="py-[120px] bg-primary-container text-white px-6 md:px-12 fade-up relative overflow-hidden">

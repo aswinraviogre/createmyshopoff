@@ -6,6 +6,7 @@ import ContactModal from "@/components/ContactModal";
 interface TeamMember {
   name: string;
   role: string;
+  image?: string;
   linkedin?: string;
 }
 
@@ -33,29 +34,30 @@ export default function AboutUs() {
 
   const team: TeamMember[] = [
     {
-      name: "Alex Babu",
-      role: "Founder & CEO",
-      linkedin: "https://in.linkedin.com/in/alex-babuofficial",
+      name: "Goutham",
+      role: "Founder&CEO",
+      image: "/team/arjun-k-ajish.jpg",
+
     },
     {
-      name: "Ashwin Thomas",
-      role: "Strategy and Growth Consultant",
-      linkedin: "#",
+      name: "Anu Krishnan",
+      role: "Offline marketing co head",
+      image: "/team/ashwin-thomas.jpg",
     },
     {
-      name: "Christy Andrews",
-      role: "Senior Software Engineer",
-      linkedin: "#",
+      name: "Rimple Rai",
+      role: "Marketing head",
+      image: "/team/christy-andrews.jpg",
     },
     {
-      name: "Thejus N.V.",
+      name: "Aswin ravi",
       role: "Frontend Developer",
-      linkedin: "#",
+      image: "/team/thejus-nv.jpg",
     },
     {
-      name: "Arjun K. Ajish",
-      role: "Software Engineer",
-      linkedin: "#",
+      name: "Srilakshmi",
+      role: "Api Tester",
+      image: "/team/alex-babu.jpg",
     },
   ];
 
@@ -257,8 +259,17 @@ export default function AboutUs() {
             {team.map((member, idx) => (
               <div key={idx} className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 shadow-sm flex flex-col justify-between text-center hover:scale-102 transition-transform duration-300">
                 <div>
-                  <div className="w-14 h-14 rounded-full bg-forest-light text-primary flex items-center justify-center mx-auto mb-4 select-none shadow-sm">
-                    <span className="material-symbols-outlined text-2xl font-bold">person</span>
+                  <div className="w-16 h-16 rounded-full bg-forest-light text-primary flex items-center justify-center mx-auto mb-4 select-none shadow-sm overflow-hidden border border-primary/10">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-center"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="material-symbols-outlined text-2xl font-bold">person</span>
+                    )}
                   </div>
                   <h4 className="font-sans text-sm font-bold text-on-surface leading-tight">{member.name}</h4>
                   <p className="font-sans text-[11px] text-on-surface-variant mt-1">{member.role}</p>

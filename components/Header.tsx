@@ -88,21 +88,16 @@ export default function Header() {
   return (
     <>
       <nav
-        className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1200px] rounded-full z-50 transition-all duration-300 border border-primary/10 dark:border-white/10 px-6 py-3 flex justify-between items-center ${scrolled
+        className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] sm:w-[calc(100%-40px)] max-w-[1200px] rounded-full z-50 transition-all duration-300 border border-primary/10 dark:border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center ${scrolled
           ? "bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md shadow-md nav-scrolled"
           : "bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-sm"
           }`}
       >
         <Link
           href="/"
-          className="flex items-center gap-3 select-none"
+          className="flex items-center gap-2 sm:gap-3 select-none shrink-0"
         >
-          <img
-            src="https://www.maydayinternet.com/wp-content/uploads/2021/11/mayday-logo-minimal.png"
-            alt="Mayday Internet Logo"
-            className="h-8 md:h-9 object-contain dark:invert"
-          />
-          <span className="font-display text-[20px] md:text-[22px] font-medium text-on-surface tracking-tight">Create my shop</span>
+          <span className="font-display text-[16px] sm:text-[19px] md:text-[22px] font-bold text-on-surface tracking-tight whitespace-nowrap">Create my shop</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -219,26 +214,26 @@ export default function Header() {
         </button>
 
         {/* Mobile Action & Menu Controls */}
-        <div className="flex md:hidden items-center gap-2 select-none">
+        <div className="flex md:hidden items-center gap-1.5 sm:gap-2 select-none shrink-0">
           <button
             onClick={() => setContactOpen(true)}
-            className="bg-white dark:bg-white/5 border border-primary/5 hover:border-primary/20 text-on-surface px-4 py-2 rounded-full font-sans text-[11px] font-bold shadow-sm flex items-center gap-1 active:scale-95 duration-150 cursor-pointer"
+            className="bg-white dark:bg-white/5 border border-primary/10 dark:border-white/10 hover:border-primary/30 text-on-surface px-2.5 sm:px-3.5 py-1.5 rounded-full font-sans text-[10px] sm:text-[11px] font-bold shadow-xs flex items-center gap-1 active:scale-95 duration-150 cursor-pointer whitespace-nowrap shrink-0"
           >
-            Let's Talk
-            <span className="material-symbols-outlined text-[12px] font-black">arrow_forward</span>
+            <span>Let's Talk</span>
+            <span className="material-symbols-outlined text-[11px] sm:text-[12px] font-bold">arrow_forward</span>
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="w-10 h-10 rounded-full bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface border border-primary/5 hover:bg-[#e2e8f0] dark:hover:bg-white/10 transition-colors cursor-pointer"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#f2f4f2] dark:bg-white/5 flex items-center justify-center text-on-surface border border-primary/5 hover:bg-[#e2e8f0] dark:hover:bg-white/10 transition-colors cursor-pointer shrink-0"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <span className="material-symbols-outlined text-lg">close</span>
+              <span className="material-symbols-outlined text-base sm:text-lg">close</span>
             ) : (
-              <div className="flex flex-col gap-[3px] items-center justify-center">
-                <div className="w-4.5 h-[2px] bg-on-surface rounded-full" />
-                <div className="w-4.5 h-[2px] bg-on-surface rounded-full" />
+              <div className="flex flex-col gap-[2.5px] items-center justify-center">
+                <div className="w-4 h-[1.5px] sm:w-4.5 sm:h-[2px] bg-on-surface rounded-full" />
+                <div className="w-4 h-[1.5px] sm:w-4.5 sm:h-[2px] bg-on-surface rounded-full" />
               </div>
             )}
           </button>
@@ -260,12 +255,7 @@ export default function Header() {
       >
         <div className="flex flex-col gap-6 mt-16">
           <div className="flex items-center gap-2 mb-4 select-none">
-            <img
-              src="https://www.maydayinternet.com/wp-content/uploads/2021/11/mayday-logo-minimal.png"
-              alt="Mayday Internet Logo"
-              className="h-8 object-contain dark:invert"
-            />
-            <span className="font-display text-[20px] font-medium text-on-surface tracking-tight">Create my shop</span>
+            <span className="font-display text-[20px] font-bold text-on-surface tracking-tight">Create my shop</span>
           </div>
 
           <ul className="flex flex-col gap-4">
