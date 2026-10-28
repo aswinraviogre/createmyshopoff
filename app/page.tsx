@@ -105,15 +105,15 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="pt-[140px] md:pt-[180px] pb-12 px-6 md:px-12 max-w-[1400px] mx-auto fade-up relative z-20">
-        <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+        <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
           <div className="text-on-surface/80 dark:text-white/80 font-sans text-[13px] md:text-[14px] font-medium tracking-wide mb-6 select-none flex items-center justify-center gap-1.5">
             <span className="text-[12px] text-on-surface/60 dark:text-white/60 font-semibold">+</span>
             Premium Shopify Developers &amp; E-commerce Agency
           </div>
-          <h1 className="font-sans text-[44px] md:text-[80px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.1] max-w-4xl">
-            Build E-Commerce
+          <h1 className="font-sans text-[34px] sm:text-[46px] md:text-[56px] lg:text-[64px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.15] max-w-6xl">
+            Custom Shopify Development Agency
             <br />
-            That Scales With Confidence
+            | Create My Shop
           </h1>
           <div className="flex flex-col items-center gap-8 mt-4 w-full">
             <p className="font-sans text-base md:text-[18px] leading-relaxed text-secondary dark:text-white/60 max-w-3xl">
