@@ -34,10 +34,10 @@ export default function ContactUs() {
               Get in Touch
             </div>
             <h1 className="font-display text-4xl md:text-5xl font-black text-on-surface uppercase tracking-tight leading-tight">
-              Start a Conversation
+              Let’s Build Something Exceptional Together
             </h1>
             <p className="font-sans text-base text-on-surface-variant leading-relaxed">
-              Have an idea? Or an e-commerce bottleneck? Fill out the assessment questionnaire.
+              Have a project in mind, need a custom Shopify theme, or want to scale your online store? Drop us a message, and our engineering team will get back to you promptly.
             </p>
             <p className="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">
               We respond to all verified requests within 2 hours.

@@ -7,8 +7,8 @@ export default function FitForm() {
     name: "",
     email: "",
     phone: "",
-    niche: "Fashion",
-    challenge: "",
+    projectType: "New Store Build",
+    details: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -30,9 +30,9 @@ export default function FitForm() {
         <div className="w-16 h-16 bg-forest-light text-primary rounded-full flex items-center justify-center shrink-0 shadow-sm animate-bounce">
           <span className="material-symbols-outlined text-3xl font-black">done</span>
         </div>
-        <h3 className="font-display text-xl font-extrabold text-on-surface uppercase tracking-tight">Assessment Received!</h3>
+        <h3 className="font-display text-xl font-extrabold text-on-surface uppercase tracking-tight">Message Received!</h3>
         <p className="font-sans text-xs text-on-surface-variant max-w-xs leading-relaxed">
-          Thank you, {formData.name}. We will review your e-commerce challenges and get back to you within 2 hours.
+          Thank you, {formData.name}. Our engineering team will review your project details and get back to you promptly.
         </p>
       </div>
     );
@@ -43,14 +43,14 @@ export default function FitForm() {
       onSubmit={handleSubmit}
       className="space-y-4 text-left w-full"
     >
-      {/* Row 1: Full name and Email address */}
+      {/* Row 1: Full Name and Business Email Address */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
           type="text"
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          placeholder="Full name"
+          placeholder="Full Name"
           className="w-full bg-[#f2f4f2]/70 dark:bg-white/5 border-0 rounded-2xl px-5 py-4 font-sans text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/40"
         />
         <input
@@ -58,45 +58,45 @@ export default function FitForm() {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          placeholder="Email address"
+          placeholder="Business Email Address"
           className="w-full bg-[#f2f4f2]/70 dark:bg-white/5 border-0 rounded-2xl px-5 py-4 font-sans text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/40"
         />
       </div>
 
-      {/* Row 2: Phone number */}
+      {/* Row 2: Phone Number / WhatsApp */}
       <input
         type="tel"
         required
         value={formData.phone}
         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        placeholder="Phone number"
+        placeholder="Phone Number / WhatsApp"
         className="w-full bg-[#f2f4f2]/70 dark:bg-white/5 border-0 rounded-2xl px-5 py-4 font-sans text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/40"
       />
 
-      {/* Row 3: Niche select dropdown */}
+      {/* Row 3: Project Type select dropdown */}
       <div className="relative">
         <select
-          value={formData.niche}
-          onChange={(e) => setFormData({ ...formData, niche: e.target.value })}
+          value={formData.projectType}
+          onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
           className="w-full bg-[#f2f4f2]/70 dark:bg-white/5 border-0 rounded-2xl px-5 py-4 font-sans text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all appearance-none cursor-pointer text-on-surface-variant/70"
         >
-          <option value="Fashion">Fashion</option>
-          <option value="Jewelry">Jewelry</option>
-          <option value="Food & Beverages">Food &amp; Beverages</option>
-          <option value="Other D2C">Other D2C</option>
+          <option value="New Store Build">New Store Build</option>
+          <option value="Theme Customization">Theme Customization</option>
+          <option value="Migration">Migration</option>
+          <option value="Performance Optimization">Performance Optimization</option>
         </select>
         <span className="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 pointer-events-none text-lg">
           keyboard_arrow_down
         </span>
       </div>
 
-      {/* Row 4: Share project idea */}
+      {/* Row 4: Project Details / Budget Range */}
       <textarea
         required
         rows={4}
-        value={formData.challenge}
-        onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
-        placeholder="Share your project idea..."
+        value={formData.details}
+        onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+        placeholder="Project Details / Budget Range"
         className="w-full bg-[#f2f4f2]/70 dark:bg-white/5 border-0 rounded-2xl px-5 py-4 font-sans text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none placeholder:text-on-surface-variant/40"
       />
 

@@ -20,8 +20,15 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mayday Internet | Premium E-commerce Solutions",
-  description: "Trusted Shopify developers and e-commerce growth optimization agency.",
+  title: "Custom Shopify Development Agency | High-Converting Stores – Create My Shop",
+  description: "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
+  keywords: [
+    "Shopify web development agency",
+    "custom Shopify store design",
+    "Shopify developers",
+    "e-commerce web design",
+    "Shopify Liquid experts",
+  ],
 };
 
 export default function RootLayout({

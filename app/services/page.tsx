@@ -28,53 +28,71 @@ export default function Services() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-36 pb-[160px]">
-        {/* Section 1: Growth & Strategy (Split Layout) */}
+        {/* Section 1: Professional Shopify Services (Split Layout) */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-[160px]">
           <div className="pr-0 lg:pr-12 fade-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-6 font-mono text-[10px] uppercase tracking-wider select-none">
               <span className="material-symbols-outlined text-primary text-[14px]">star</span>
-              <span className="text-primary font-semibold">Growth Optimization</span>
+              <span className="text-primary font-semibold">Shopify Services</span>
             </div>
-            <h1 className="font-display text-4xl md:text-6xl font-black text-on-surface mb-6 uppercase">
-              Growth &amp; Strategy
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-black text-on-surface mb-6 uppercase tracking-tight">
+              Professional Shopify Services Tailored For Modern Retail
             </h1>
-            <p className="font-sans text-[18px] leading-[30px] text-on-surface-variant mb-12 max-w-md">
-              We improve journeys, insights, and decisions to drive better growth.
+            <p className="font-sans text-[18px] leading-[30px] text-on-surface-variant mb-10 max-w-xl">
+              Whether you are migrating from another platform, launching a brand-new DTC brand, or scaling an enterprise catalog, our engineering team delivers precision-built solutions.
             </p>
             <div className="space-y-4">
               {/* Service Card 1 */}
-              <div className="flex items-center gap-6 p-6 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all cursor-pointer group">
-                <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <span className="material-symbols-outlined">trending_up</span>
+              <div className="flex items-start gap-5 p-5 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all group">
+                <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-mono font-bold text-xs text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mt-0.5">
+                  01
                 </div>
                 <div>
-                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">Conversion Optimization</h3>
-                  <p className="font-sans text-sm text-on-surface-variant">Better journeys that improve revenue.</p>
+                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">Custom Shopify Store Development</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    Complete store architecture setup, payment gateway integration, multi-currency/multi-language configuration, tax rules, and automated shipping profiles.
+                  </p>
                 </div>
               </div>
               {/* Service Card 2 */}
-              <div className="flex items-center gap-6 p-6 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all cursor-pointer group">
-                <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <span className="material-symbols-outlined">analytics</span>
+              <div className="flex items-start gap-5 p-5 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all group">
+                <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-mono font-bold text-xs text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mt-0.5">
+                  02
                 </div>
                 <div>
-                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">Ecommerce Analytics</h3>
-                  <p className="font-sans text-sm text-on-surface-variant">Clear insights for confident decisions.</p>
+                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">Custom Liquid Theme Development &amp; Modification</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    Custom section building, dynamic checkout blocks, flexible product detail pages (PDP), and optimized collection filters built natively into Shopify Liquid.
+                  </p>
                 </div>
               </div>
               {/* Service Card 3 */}
-              <div className="flex items-center gap-6 p-6 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all cursor-pointer group">
-                <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <span className="material-symbols-outlined">lightbulb</span>
+              <div className="flex items-start gap-5 p-5 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all group">
+                <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-mono font-bold text-xs text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mt-0.5">
+                  03
                 </div>
                 <div>
-                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">Strategic Consulting</h3>
-                  <p className="font-sans text-sm text-on-surface-variant">Guidance for complex ecommerce decisions.</p>
+                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">E-Commerce Migration Services</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    Seamless data migration from WooCommerce, Magento, or Custom platforms to Shopify with zero downtime and zero loss of SEO authority or customer history.
+                  </p>
+                </div>
+              </div>
+              {/* Service Card 4 */}
+              <div className="flex items-start gap-5 p-5 rounded-2xl bg-white dark:bg-surface-dark border border-primary/10 hover:shadow-md transition-all group">
+                <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-mono font-bold text-xs text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0 mt-0.5">
+                  04
+                </div>
+                <div>
+                  <h3 className="font-sans text-base font-bold text-on-surface mb-1">Performance &amp; Core Web Vitals Optimization</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    Comprehensive code audits, script optimization, lazy loading, and image compression to achieve elite Google Lighthouse scores.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="relative h-[450px] md:h-[600px] rounded-3xl overflow-hidden mt-12 lg:mt-0 shadow-sm border border-primary/10 fade-up">
+          <div className="relative h-[500px] md:h-[650px] rounded-3xl overflow-hidden mt-12 lg:mt-0 shadow-sm border border-primary/10 fade-up">
             <img
               className="absolute inset-0 w-full h-full object-cover"
               alt="Professional consulting and strategy analytics workspace."

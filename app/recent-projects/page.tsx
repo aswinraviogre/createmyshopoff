@@ -37,16 +37,16 @@ export default function RecentProjects() {
       <main className="pt-36 pb-[160px] w-full max-w-[1200px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <section className="mb-12 fade-up">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-forest-light text-primary rounded-full font-mono text-[10px] uppercase tracking-wider mb-6 select-none border border-primary/10">
               <span className="material-symbols-outlined text-[14px]">star</span>
               Our Recent Work
             </div>
             <h1 className="font-display text-4xl md:text-6xl font-black text-on-surface mb-6 uppercase leading-tight">
-              Selected Client Projects
+              Proven Work That Drives Real Growth
             </h1>
             <p className="font-sans text-[18px] leading-[30px] text-on-surface-variant">
-              A selection of 16 live brands we've helped build, transform, and grow across fashion, jewellery, wellness, food, and gifting.
+              Take a look at some of the custom Shopify storefronts, high-converting themes, and digital experiences we’ve engineered for our clients.
             </p>
           </div>
         </section>

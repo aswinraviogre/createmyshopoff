@@ -23,11 +23,12 @@ export default function Home() {
 
   const platformFeatures = [
     {
-      id: "ecommerce-builds",
-      title: "Ecommerce Builds",
-      subtitle: "Stable ecommerce foundations for growth.",
+      id: "custom-shopify-store",
+      title: "Custom Shopify Store Design & Setup",
+      subtitle: "From conceptualization to launch, fully customized and conversion-optimized.",
+      description: "From conceptualization to final launch, we build fully customized, conversion-optimized Shopify storefronts tailored precisely to your brand guidelines and product catalog.",
       href: "/ecommerce-website-development",
-      icon: "shopping_bag",
+      icon: "storefront",
       image: "/projects/taruni.webp",
       badge1: "⚡ Sub-1s Fast Load Time",
       badge2: "✦ 100% Mobile Optimized",
@@ -36,30 +37,46 @@ export default function Home() {
       accent: "#22c55e",
     },
     {
-      id: "shopify-dev",
-      title: "Shopify Development",
-      subtitle: "Clean Shopify systems built to scale.",
+      id: "custom-liquid-theme",
+      title: "Custom Liquid Theme Engineering",
+      subtitle: "Handcrafted high-performance Shopify Liquid themes optimized for Core Web Vitals.",
+      description: "Ditch slow templates. Our developers handcraft high-performance Shopify Liquid themes optimized for Core Web Vitals, lightning-fast load speeds, and flawless mobile UX.",
       href: "/shopify-ecommerce-development",
-      icon: "paid",
+      icon: "code",
       image: "/projects/malika-clothing.webp",
       badge1: "✦ Liquid & Hydrogen Experts",
       badge2: "✦ 99.99% Guaranteed SLA",
       badge3: "✦ Zero-Friction Checkout",
-      badge4: "✦ Custom App Integrations",
+      badge4: "✦ 100% Core Web Vitals",
       accent: "#10b981",
     },
     {
-      id: "platform-migration",
-      title: "Platform Migration",
-      subtitle: "Safe migrations protecting revenue and SEO.",
-      href: "/platform-migration",
-      icon: "dns",
+      id: "ecommerce-automation",
+      title: "E-Commerce Automation & Integrations",
+      subtitle: "Streamline back-office operations with custom apps, workflows, PostBus & VaChat.",
+      description: "Streamline your back-office operations with custom apps, advanced inventory workflows, and native tools—including our in-house platforms PostBus for logistics and VaChat for automated WhatsApp sales.",
+      href: "/integrations-ecommerce-automation",
+      icon: "smart_toy",
       image: "/projects/beyond-be-bella.webp",
-      badge1: "✦ 100% SEO Retention",
-      badge2: "✦ Zero Downtime Switch",
-      badge3: "✦ Full Order & Data Transfer",
-      badge4: "✦ Automated URL Mapping",
+      badge1: "✦ PostBus Shipping Sync",
+      badge2: "✦ VaChat AI CRM Agent",
+      badge3: "✦ Multi-App Workflows",
+      badge4: "✦ Automated Sync",
       accent: "#16a34a",
+    },
+    {
+      id: "cro-optimization",
+      title: "Conversion Rate Optimization (CRO)",
+      subtitle: "Optimize checkout flows, micro-interactions, and catalog structures to boost AOV.",
+      description: "Turn visitors into loyal buyers. We optimize checkout flows, micro-interactions, and catalog structures to maximize your average order value (AOV).",
+      href: "/conversion-rate-optimisation",
+      icon: "trending_up",
+      image: "/projects/essme-luxury-gifts.webp",
+      badge1: "✦ Checkout Funnel Boost",
+      badge2: "✦ Frictionless Journeys",
+      badge3: "✦ +25% Avg AOV Lift",
+      badge4: "✦ Mobile Cart Drawer",
+      accent: "#22c55e",
     },
   ];
 
@@ -91,37 +108,37 @@ export default function Home() {
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <div className="text-on-surface/80 dark:text-white/80 font-sans text-[13px] md:text-[14px] font-medium tracking-wide mb-6 select-none flex items-center justify-center gap-1.5">
             <span className="text-[12px] text-on-surface/60 dark:text-white/60 font-semibold">+</span>
-            Premium Shopify Developers
+            Premium Shopify Developers &amp; E-commerce Agency
           </div>
           <h1 className="font-sans text-[44px] md:text-[80px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.1] max-w-4xl">
-            Build e-commerce
+            Build E-Commerce
             <br />
-            that scales with confidence
+            That Scales With Confidence
           </h1>
           <div className="flex flex-col items-center gap-8 mt-4 w-full">
-            <p className="font-sans text-base md:text-[18px] leading-relaxed text-secondary dark:text-white/60 max-w-2xl">
-              Trusted e-commerce solutions designed to scale with your brand.
+            <p className="font-sans text-base md:text-[18px] leading-relaxed text-secondary dark:text-white/60 max-w-3xl">
+              Transform your retail brand into a high-converting digital powerhouse. We engineer bespoke Shopify storefronts, lightning-fast custom Liquid themes, and seamless e-commerce ecosystems designed to maximize conversions and drive sustainable growth.
             </p>
             <div className="flex flex-row items-center justify-center gap-3 w-full sm:w-auto select-none">
+              <Link
+                href="/recent-projects"
+                className="bg-[#b3e620] hover:bg-[#a6d71b] text-on-surface px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95 duration-150 cursor-pointer shrink-0"
+              >
+                View Our Works
+              </Link>
               <button
                 onClick={() => setContactOpen(true)}
-                className="bg-[#b3e620] hover:bg-[#a6d71b] text-on-surface px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95 duration-150 cursor-pointer shrink-0"
+                className="text-center bg-white dark:bg-transparent border border-outline-variant/60 dark:border-white/10 hover:border-primary text-on-surface dark:text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all shadow-sm hover:shadow-md active:scale-95 duration-150 shrink-0 cursor-pointer"
               >
                 Start a Conversation
               </button>
-              <Link
-                href="/recent-projects"
-                className="text-center bg-white dark:bg-transparent border border-outline-variant/60 dark:border-white/10 hover:border-primary text-on-surface dark:text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all shadow-sm hover:shadow-md active:scale-95 duration-150 shrink-0"
-              >
-                View Works
-              </Link>
             </div>
 
             {/* In-House Software Trust Lockup: PostBus & VaChat */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 pt-2 select-none">
               <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-on-surface-variant/70 font-bold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-                Software Built by Us:
+                Software Built In-House:
               </span>
 
               <div className="flex items-center gap-2">
@@ -129,7 +146,7 @@ export default function Home() {
                   href="https://www.postbus.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="PostBus — India Post Shipping SaaS (postbus.in)"
+                  title="PostBus (Smart Shipping) — postbus.in"
                   className="group inline-flex items-center gap-1.5 h-8 pl-1.5 pr-2.5 rounded-full bg-white dark:bg-white/5 border border-primary/10 dark:border-white/10 hover:border-[#E11D48]/60 shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer"
                 >
                   <img
@@ -137,9 +154,14 @@ export default function Home() {
                     alt="PostBus Icon"
                     className="w-5 h-5 rounded-[6px] object-contain shrink-0 group-hover:scale-105 transition-transform"
                   />
-                  <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#E11D48] transition-colors leading-none">
-                    PostBus
-                  </span>
+                  <div className="flex items-center gap-1">
+                    <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#E11D48] transition-colors leading-none">
+                      PostBus
+                    </span>
+                    <span className="text-[9.5px] font-mono text-on-surface-variant/70 font-medium hidden sm:inline">
+                      (Smart Shipping)
+                    </span>
+                  </div>
                   <span className="material-symbols-outlined text-[12px] text-on-surface-variant/50 group-hover:text-[#E11D48] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0">
                     north_east
                   </span>
@@ -149,7 +171,7 @@ export default function Home() {
                   href="https://vachat.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="VaChat — AI WhatsApp Marketing & CRM (vachat.in)"
+                  title="VaChat (AI WhatsApp CRM) — vachat.in"
                   className="group inline-flex items-center gap-1.5 h-8 pl-1.5 pr-2.5 rounded-full bg-white dark:bg-white/5 border border-primary/10 dark:border-white/10 hover:border-[#03cf65]/60 shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer"
                 >
                   <img
@@ -157,9 +179,14 @@ export default function Home() {
                     alt="VaChat Icon"
                     className="w-5 h-5 rounded-[6px] object-contain shrink-0 group-hover:scale-105 transition-transform"
                   />
-                  <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#03cf65] transition-colors leading-none">
-                    VaChat
-                  </span>
+                  <div className="flex items-center gap-1">
+                    <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#03cf65] transition-colors leading-none">
+                      VaChat
+                    </span>
+                    <span className="text-[9.5px] font-mono text-on-surface-variant/70 font-medium hidden sm:inline">
+                      (AI WhatsApp CRM)
+                    </span>
+                  </div>
                   <span className="material-symbols-outlined text-[12px] text-on-surface-variant/50 group-hover:text-[#03cf65] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0">
                     north_east
                   </span>
@@ -170,16 +197,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pure Logo-Style Marquee Ticker (Matching Reference Image) */}
+      {/* Pure Logo-Style Marquee Ticker */}
       <section className="py-12 bg-white dark:bg-[#181818] border-y border-primary/5 dark:border-white/5 select-none overflow-hidden relative fade-up">
         {/* Soft edge gradient fades */}
         <div className="absolute inset-y-0 left-0 w-20 md:w-36 bg-gradient-to-r from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-20 md:w-36 bg-gradient-to-l from-white to-transparent dark:from-[#181818] z-10 pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 mb-8 text-center">
-          <p className="font-sans text-xs md:text-sm font-medium tracking-normal text-on-surface/80 dark:text-white/80">
-            Trusted by growing brands across industries
-          </p>
+          <h2 className="font-sans text-xs md:text-sm font-semibold tracking-normal text-on-surface/90 dark:text-white/90 uppercase tracking-wider">
+            Trusted by Leading Retail Brands Across Fashion, Beauty &amp; Lifestyle
+          </h2>
         </div>
 
         <div className="w-full overflow-hidden relative">
@@ -205,39 +232,49 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* Statement & Values Section (Dark variant) */}
+      {/* Why Choose Us Section */}
       <section className="py-[120px] bg-primary-container text-white px-6 md:px-12 fade-up relative overflow-hidden">
         <div className="max-w-[1000px] mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white font-mono text-xs uppercase tracking-widest mb-8 border border-white/20 select-none">
-            <span className="material-symbols-outlined text-[14px]">info</span>
-            Who We Are
+            <span className="material-symbols-outlined text-[14px]">verified</span>
+            Why Choose Us
           </div>
           <h2 className="font-display text-[28px] md:text-[40px] font-semibold leading-tight mb-16 tracking-tight">
-            We started Mayday to be the kind of partner we wished existed when we were building complex systems ourselves — one that does things properly, even when it takes longer.
+            Built for Performance, Designed for Revenue
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white text-on-surface p-6 rounded-3xl flex flex-col items-center text-center shadow-md">
-              <div className="w-12 h-12 bg-[#b3e620] rounded-full flex items-center justify-center shrink-0 mb-4 shadow-sm">
-                <span className="material-symbols-outlined text-on-surface">handshake</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="bg-white text-on-surface p-6 rounded-3xl flex flex-col justify-between shadow-md">
+              <div>
+                <div className="w-12 h-12 bg-[#b3e620] rounded-full flex items-center justify-center shrink-0 mb-4 shadow-sm">
+                  <span className="material-symbols-outlined text-on-surface">conversion_path</span>
+                </div>
+                <h4 className="font-sans text-base font-bold text-on-surface">Conversion-First Architecture</h4>
+                <p className="text-xs text-secondary mt-2 leading-relaxed">
+                  Every line of code and UI component is structured to minimize friction and boost checkout completions.
+                </p>
               </div>
-              <h4 className="font-sans text-base font-bold">Long-Term Thinking</h4>
-              <p className="text-xs text-secondary mt-1">Built for years</p>
             </div>
-            <div className="bg-white text-on-surface p-6 rounded-3xl flex flex-col items-center text-center shadow-md">
-              <div className="w-12 h-12 bg-[#b3e620] rounded-full flex items-center justify-center shrink-0 mb-4 shadow-sm">
-                <span className="material-symbols-outlined text-on-surface">psychology</span>
+            <div className="bg-white text-on-surface p-6 rounded-3xl flex flex-col justify-between shadow-md">
+              <div>
+                <div className="w-12 h-12 bg-[#b3e620] rounded-full flex items-center justify-center shrink-0 mb-4 shadow-sm">
+                  <span className="material-symbols-outlined text-on-surface">speed</span>
+                </div>
+                <h4 className="font-sans text-base font-bold text-on-surface">Zero Bloat, High Speed</h4>
+                <p className="text-xs text-secondary mt-2 leading-relaxed">
+                  Clean codebases that load instantly, ensuring superior search engine rankings and lower bounce rates.
+                </p>
               </div>
-              <h4 className="font-sans text-base font-bold">Thoughtful Decisions</h4>
-              <p className="text-xs text-secondary mt-1">No shortcuts</p>
             </div>
-            <div className="bg-white text-on-surface p-6 rounded-3xl flex flex-col items-center text-center shadow-md">
-              <div className="w-12 h-12 bg-[#b3e620] rounded-full flex items-center justify-center shrink-0 mb-4 shadow-sm">
-                <span className="material-symbols-outlined text-on-surface">diamond</span>
+            <div className="bg-white text-on-surface p-6 rounded-3xl flex flex-col justify-between shadow-md">
+              <div>
+                <div className="w-12 h-12 bg-[#b3e620] rounded-full flex items-center justify-center shrink-0 mb-4 shadow-sm">
+                  <span className="material-symbols-outlined text-on-surface">code</span>
+                </div>
+                <h4 className="font-sans text-base font-bold text-on-surface">Deep Shopify Expertise</h4>
+                <p className="text-xs text-secondary mt-2 leading-relaxed">
+                  Specialized knowledge of Shopify APIs, cart customizations, multi-currency setups, and headless architecture.
+                </p>
               </div>
-              <h4 className="font-sans text-base font-bold">Clear Communication</h4>
-              <p className="text-xs text-secondary mt-1">Always informed</p>
             </div>
           </div>
         </div>
@@ -566,13 +603,13 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none text-primary">
                 <span>✦</span>
-                <span className="font-semibold">Platform Build</span>
+                <span className="font-semibold">What We Do Best</span>
               </div>
               <h2 className="font-sans text-3xl md:text-5xl font-bold text-on-surface dark:text-white tracking-tight leading-tight">
-                Build &amp; Platform
+                End-to-End Shopify Solutions Engineered for Growth
               </h2>
               <p className="font-sans text-base text-on-surface-variant dark:text-white/70 mt-4 leading-relaxed">
-                We build stable platforms that are ready to grow with your business.
+                From custom Liquid themes to automated workflows and CRO, we engineer bespoke Shopify solutions designed to scale your business.
               </p>
             </div>
 

@@ -68,15 +68,13 @@ export default function AboutUs() {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-light text-primary font-mono text-[12px] font-medium uppercase tracking-widest mb-8 border border-primary/10 select-none">
             <span className="material-symbols-outlined text-[14px]">groups</span>
-            Digital Partner
+            About Create My Shop
           </div>
           <h1 className="font-display text-[44px] md:text-[68px] font-black text-on-surface mb-8 tracking-tighter leading-tight uppercase">
-            We design digital platforms
-            <br />
-            that prioritize people
+            We Build Digital Storefronts That Mean Business
           </h1>
-          <p className="font-sans text-[18px] leading-[30px] text-secondary max-w-2xl pl-0 md:pl-8 border-l-2 border-primary">
-            We engineer high-performance ecosystems and CRO strategies to maximize profit and scale your brand globally while remaining robust, scalable, and operationally sound.
+          <p className="font-sans text-[18px] leading-[30px] text-secondary max-w-3xl pl-0 md:pl-8 border-l-2 border-primary">
+            At Create My Shop, we don’t just build websites—we architect high-performing e-commerce ecosystems. Specializing exclusively in Shopify, our technical team combines clean code, stunning UI/UX design, and robust backend integrations to help brands scale without technical limits.
           </p>
         </div>
       </section>
@@ -93,10 +91,10 @@ export default function AboutUs() {
               Our Journey
             </h2>
             <p className="font-sans text-base text-on-surface-variant leading-relaxed">
-              Founded in 2020, Mayday Internet was built on a simple principle: digital work should be clear, dependable, and human. What began as a small team focused on solving practical problems grew steadily through consistent delivery, careful thinking, and earned trust.
+              Founded in 2020, Create My Shop was built on a simple principle: digital work should be clear, dependable, and human. What began as a small team focused on solving practical problems grew steadily through consistent delivery, careful thinking, and earned trust.
             </p>
             <p className="font-sans text-base text-on-surface-variant leading-relaxed">
-              In 2021, Mayday Internet took shape as a long-term digital partner rather than a conventional agency. By specialising within the Shopify ecosystem, the team chose depth over breadth — focusing on structure, clarity, and sustainable growth.
+              Today, Create My Shop operates as a long-term technical partner rather than a conventional agency. By specialising exclusively within the Shopify ecosystem, our team chooses depth over breadth — focusing on structure, clarity, and sustainable growth.
             </p>
           </div>
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-6 select-none fade-up">
@@ -128,30 +126,39 @@ export default function AboutUs() {
               <span className="text-primary font-semibold">Our Principles</span>
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase">
-              What Drives Us
+              The Principles That Drive Our Code
             </h2>
             <p className="font-sans text-base text-on-surface-variant mt-2">
-              Clear principles guide every decision we make.
+              Clear engineering standards and performance benchmarks guide every project we undertake.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
-            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-2xl p-8">
-              <h3 className="font-sans text-base font-bold text-on-surface mb-3 uppercase">Design That Sells</h3>
-              <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                Clear, conversion-focused design that respects the user and serves the business.
-              </p>
+            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-2xl p-8 flex flex-col justify-between">
+              <div>
+                <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm mb-4 font-mono">01</span>
+                <h3 className="font-sans text-base font-bold text-on-surface mb-3 uppercase">Speed is Revenue</h3>
+                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                  A one-second delay can cost millions in lost sales. We build lightning-fast storefronts optimized for maximum performance.
+                </p>
+              </div>
             </div>
-            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-2xl p-8">
-              <h3 className="font-sans text-base font-bold text-on-surface mb-3 uppercase">Infrastructure That Lasts</h3>
-              <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                Systems built thoughtfully — strong enough for today and adaptable for tomorrow.
-              </p>
+            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-2xl p-8 flex flex-col justify-between">
+              <div>
+                <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm mb-4 font-mono">02</span>
+                <h3 className="font-sans text-base font-bold text-on-surface mb-3 uppercase">Tailored Over Template</h3>
+                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                  Every brand is unique. We craft custom Liquid themes and unique user journeys rather than forcing your business into rigid templates.
+                </p>
+              </div>
             </div>
-            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-2xl p-8">
-              <h3 className="font-sans text-base font-bold text-on-surface mb-3 uppercase">Strategy Rooted in Reality</h3>
-              <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                Decisions guided by data, context, and lived business understanding — not assumptions.
-              </p>
+            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-2xl p-8 flex flex-col justify-between">
+              <div>
+                <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm mb-4 font-mono">03</span>
+                <h3 className="font-sans text-base font-bold text-on-surface mb-3 uppercase">Ecosystem Thinking</h3>
+                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                  Beyond the cart, we integrate powerful logistics (PostBus) and automated AI marketing (VaChat) to supercharge your brand operations.
+                </p>
+              </div>
             </div>
           </div>
         </div>
