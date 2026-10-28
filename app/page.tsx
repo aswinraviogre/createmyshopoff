@@ -110,10 +110,10 @@ export default function Home() {
             <span className="text-[12px] text-on-surface/60 dark:text-white/60 font-semibold">+</span>
             Premium Shopify Developers &amp; E-commerce Agency
           </div>
-          <h1 className="font-sans text-[34px] sm:text-[46px] md:text-[56px] lg:text-[64px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.15] max-w-6xl">
-            Custom <span className="text-[#5E8E3E] dark:text-[#95BF47] font-semibold">Shopify</span> Development Agency
+          <h1 className="font-sans text-[36px] sm:text-[48px] md:text-[62px] lg:text-[72px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.14] max-w-5xl">
+            Custom <span className="text-[#5E8E3E] dark:text-[#95BF47] font-semibold">Shopify</span> Store
             <br />
-            | Create My Shop
+            Development &amp; Design Agency
           </h1>
           <div className="flex flex-col items-center gap-8 mt-4 w-full">
             <p className="font-sans text-base md:text-[18px] leading-relaxed text-secondary dark:text-white/60 max-w-3xl">

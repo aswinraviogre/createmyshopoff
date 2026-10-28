@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://createmyshop.com"),
-  title: "Custom Shopify Development Agency | Create My Shop",
+  title: "Custom Shopify Store Development & Design Agency | Create My Shop",
   description:
     "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "Shopify migration",
   ],
   openGraph: {
-    title: "Custom Shopify Development Agency | Create My Shop",
+    title: "Custom Shopify Store Development & Design Agency | Create My Shop",
     description:
       "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
     siteName: "Create My Shop",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Shopify Development Agency | Create My Shop",
+    title: "Custom Shopify Store Development & Design Agency | Create My Shop",
     description:
       "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
   },
