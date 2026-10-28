@@ -116,6 +116,56 @@ export default function Home() {
                 View Works
               </Link>
             </div>
+
+            {/* In-House Software Trust Lockup: PostBus & VaChat */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 pt-2 select-none">
+              <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-on-surface-variant/70 font-bold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
+                Software Built by Us:
+              </span>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://www.postbus.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="PostBus — India Post Shipping SaaS (postbus.in)"
+                  className="group inline-flex items-center gap-1.5 h-8 pl-1.5 pr-2.5 rounded-full bg-white dark:bg-white/5 border border-primary/10 dark:border-white/10 hover:border-[#E11D48]/60 shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer"
+                >
+                  <img
+                    src="/software/postbus-mark.svg"
+                    alt="PostBus Icon"
+                    className="w-5 h-5 rounded-[6px] object-contain shrink-0 group-hover:scale-105 transition-transform"
+                  />
+                  <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#E11D48] transition-colors leading-none">
+                    PostBus
+                  </span>
+                  <span className="material-symbols-outlined text-[12px] text-on-surface-variant/50 group-hover:text-[#E11D48] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0">
+                    north_east
+                  </span>
+                </a>
+
+                <a
+                  href="https://vachat.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="VaChat — AI WhatsApp Marketing & CRM (vachat.in)"
+                  className="group inline-flex items-center gap-1.5 h-8 pl-1.5 pr-2.5 rounded-full bg-white dark:bg-white/5 border border-primary/10 dark:border-white/10 hover:border-[#03cf65]/60 shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer"
+                >
+                  <img
+                    src="/software/vachat-mark.svg"
+                    alt="VaChat Icon"
+                    className="w-5 h-5 rounded-[6px] object-contain shrink-0 group-hover:scale-105 transition-transform"
+                  />
+                  <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#03cf65] transition-colors leading-none">
+                    VaChat
+                  </span>
+                  <span className="material-symbols-outlined text-[12px] text-on-surface-variant/50 group-hover:text-[#03cf65] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0">
+                    north_east
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
