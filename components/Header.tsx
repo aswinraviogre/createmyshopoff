@@ -94,7 +94,7 @@ export default function Header() {
   return (
     <>
       <nav
-        className={`fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-20px)] sm:w-[calc(100%-32px)] md:w-[calc(100%-48px)] max-w-[1240px] rounded-full z-50 transition-all duration-300 border border-primary/10 dark:border-white/10 px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 lg:py-3 flex justify-between items-center ${scrolled
+        className={`fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-20px)] sm:w-[calc(100%-32px)] md:w-[calc(100%-48px)] max-w-[1360px] rounded-full z-50 transition-all duration-300 border border-primary/10 dark:border-white/10 px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 lg:py-3 flex justify-between items-center ${scrolled
           ? "bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md shadow-md nav-scrolled"
           : "bg-surface/85 dark:bg-surface-dark/85 backdrop-blur-md shadow-sm"
           }`}
@@ -105,15 +105,15 @@ export default function Header() {
             href="/"
             className="flex items-center gap-1.5 sm:gap-2 select-none shrink-0"
           >
-            <span className="font-display text-[15px] sm:text-[17px] md:text-[19px] lg:text-[21px] font-bold text-on-surface tracking-tight whitespace-nowrap">
+            <span className="font-display text-[15px] sm:text-[17px] md:text-[19px] lg:text-[20px] xl:text-[21px] font-bold text-on-surface tracking-tight whitespace-nowrap">
               Create my shop
             </span>
           </Link>
 
           {/* PostBus & VaChat Senior UI/UX Ecosystem Badges - Visible on XL screens (1280px+) where horizontal space allows */}
-          <div className="hidden xl:flex items-center gap-2 pl-3 border-l border-primary/15 dark:border-white/10">
+          <div className="hidden xl:flex items-center gap-2 pl-3 border-l border-primary/15 dark:border-white/10 shrink-0">
             {/* Contextual beacon on wide screens */}
-            <div className="hidden 2xl:flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-on-surface-variant/70 font-bold select-none mr-0.5">
+            <div className="hidden 2xl:flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-on-surface-variant/70 font-bold select-none mr-0.5 whitespace-nowrap">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
               <span>SaaS:</span>
             </div>
@@ -124,19 +124,19 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="PostBus — India Post Shipping Software (postbus.in)"
-              className="group relative inline-flex items-center gap-1.5 h-8 pl-1.5 pr-2.5 rounded-full bg-white/95 dark:bg-[#1c1c1c] border border-primary/10 dark:border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_10px_rgba(225,29,72,0.22)] hover:border-[#E11D48]/60 hover:bg-white dark:hover:bg-[#222222] transition-all duration-200 cursor-pointer"
+              className="group relative inline-flex items-center gap-1.5 h-7.5 xl:h-8 pl-1.5 pr-2.5 rounded-full bg-white/95 dark:bg-[#1c1c1c] border border-primary/10 dark:border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_10px_rgba(225,29,72,0.22)] hover:border-[#E11D48]/60 hover:bg-white dark:hover:bg-[#222222] transition-all duration-200 cursor-pointer shrink-0 whitespace-nowrap"
               title="PostBus — India Post Shipping Software (postbus.in)"
             >
               <img
                 src="/software/postbus-mark.svg"
                 alt="PostBus Icon"
-                className="w-5 h-5 rounded-[6px] object-contain shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                className="w-4.5 h-4.5 xl:w-5 xl:h-5 rounded-[6px] object-contain shadow-xs shrink-0 group-hover:scale-105 transition-transform"
               />
-              <div className="flex items-center gap-1">
-                <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#E11D48] transition-colors leading-none">
+              <div className="flex items-center gap-1 whitespace-nowrap">
+                <span className="font-display text-[11.5px] xl:text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#E11D48] transition-colors leading-none">
                   PostBus
                 </span>
-                <span className="hidden 2xl:inline-block text-[8.5px] font-mono font-bold uppercase tracking-wider text-[#E11D48] bg-[#E11D48]/10 px-1 py-0.5 rounded leading-none">
+                <span className="hidden 2xl:inline-block text-[8px] xl:text-[8.5px] font-mono font-bold uppercase tracking-wider text-[#E11D48] bg-[#E11D48]/10 px-1 py-0.5 rounded leading-none">
                   Shipping
                 </span>
               </div>
@@ -151,19 +151,19 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="VaChat — AI WhatsApp Marketing & CRM (vachat.in)"
-              className="group relative inline-flex items-center gap-1.5 h-8 pl-1.5 pr-2.5 rounded-full bg-white/95 dark:bg-[#1c1c1c] border border-primary/10 dark:border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_10px_rgba(3,207,101,0.22)] hover:border-[#03cf65]/60 hover:bg-white dark:hover:bg-[#222222] transition-all duration-200 cursor-pointer"
+              className="group relative inline-flex items-center gap-1.5 h-7.5 xl:h-8 pl-1.5 pr-2.5 rounded-full bg-white/95 dark:bg-[#1c1c1c] border border-primary/10 dark:border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_2px_10px_rgba(3,207,101,0.22)] hover:border-[#03cf65]/60 hover:bg-white dark:hover:bg-[#222222] transition-all duration-200 cursor-pointer shrink-0 whitespace-nowrap"
               title="VaChat — AI WhatsApp Marketing & CRM (vachat.in)"
             >
               <img
                 src="/software/vachat-mark.svg"
                 alt="VaChat Icon"
-                className="w-5 h-5 rounded-[6px] object-contain shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                className="w-4.5 h-4.5 xl:w-5 xl:h-5 rounded-[6px] object-contain shadow-xs shrink-0 group-hover:scale-105 transition-transform"
               />
-              <div className="flex items-center gap-1">
-                <span className="font-display text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#03cf65] transition-colors leading-none">
+              <div className="flex items-center gap-1 whitespace-nowrap">
+                <span className="font-display text-[11.5px] xl:text-[12px] font-black text-on-surface tracking-tight group-hover:text-[#03cf65] transition-colors leading-none">
                   VaChat
                 </span>
-                <span className="hidden 2xl:inline-block text-[8.5px] font-mono font-bold uppercase tracking-wider text-[#00a84d] bg-[#03cf65]/10 px-1 py-0.5 rounded leading-none">
+                <span className="hidden 2xl:inline-block text-[8px] xl:text-[8.5px] font-mono font-bold uppercase tracking-wider text-[#00a84d] bg-[#03cf65]/10 px-1 py-0.5 rounded leading-none">
                   AI CRM
                 </span>
               </div>
@@ -174,23 +174,23 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Desktop Menu - Active on LG (1024px+) */}
-        <ul className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-7">
-          <li>
+        {/* Desktop Menu - Active on LG (1024px+) with strict single-line horizontal alignment */}
+        <ul className="hidden lg:flex items-center gap-3 xl:gap-4.5 2xl:gap-6 shrink-0">
+          <li className="shrink-0">
             <Link
               href="/"
               onClick={handleLinkClick}
-              className={`font-sans text-[13px] xl:text-[14px] font-medium transition-colors ${pathname === "/" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
+              className={`inline-flex items-center font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium transition-colors whitespace-nowrap ${pathname === "/" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
                 }`}
             >
               Home
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link
               href="/about-us"
               onClick={handleLinkClick}
-              className={`font-sans text-[13px] xl:text-[14px] font-medium transition-colors ${pathname === "/about-us" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
+              className={`inline-flex items-center font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium transition-colors whitespace-nowrap ${pathname === "/about-us" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
                 }`}
             >
               About us
@@ -198,13 +198,13 @@ export default function Header() {
           </li>
 
           {/* Dropdown triggers */}
-          <li className="relative" ref={dropdownRef}>
+          <li className="relative shrink-0" ref={dropdownRef}>
             <button
               onMouseEnter={() => setDropdownOpen(true)}
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="font-sans text-[13px] xl:text-[14px] font-medium text-on-surface-variant hover:text-primary flex items-center gap-1 cursor-pointer transition-colors"
+              className="inline-flex items-center gap-1 font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium text-on-surface-variant hover:text-primary cursor-pointer transition-colors whitespace-nowrap"
             >
-              What We Do
+              <span>What We Do</span>
               <span className="material-symbols-outlined text-[16px] transition-transform duration-200" style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
                 keyboard_arrow_down
               </span>
@@ -247,11 +247,11 @@ export default function Header() {
           </li>
 
           {/* Software Built by Us Dropdown */}
-          <li className="relative" ref={softwareDropdownRef}>
+          <li className="relative shrink-0" ref={softwareDropdownRef}>
             <button
               onMouseEnter={() => setSoftwareDropdownOpen(true)}
               onClick={() => setSoftwareDropdownOpen(!softwareDropdownOpen)}
-              className="font-sans text-[13px] xl:text-[14px] font-medium text-on-surface-variant hover:text-primary flex items-center gap-1.5 cursor-pointer transition-colors"
+              className="inline-flex items-center gap-1.5 font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium text-on-surface-variant hover:text-primary cursor-pointer transition-colors whitespace-nowrap"
             >
               <span>Software</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
@@ -340,31 +340,31 @@ export default function Header() {
             )}
           </li>
 
-          <li>
+          <li className="shrink-0">
             <Link
               href="/recent-projects"
               onClick={handleLinkClick}
-              className={`font-sans text-[13px] xl:text-[14px] font-medium transition-colors ${pathname === "/recent-projects" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
+              className={`inline-flex items-center font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium transition-colors whitespace-nowrap ${pathname === "/recent-projects" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
                 }`}
             >
               Recent Projects
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link
               href="/case-studies"
               onClick={handleLinkClick}
-              className={`font-sans text-[13px] xl:text-[14px] font-medium transition-colors ${pathname === "/case-studies" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
+              className={`inline-flex items-center font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium transition-colors whitespace-nowrap ${pathname === "/case-studies" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
                 }`}
             >
               Case studies
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link
               href="/blogs"
               onClick={handleLinkClick}
-              className={`font-sans text-[13px] xl:text-[14px] font-medium transition-colors ${pathname === "/blogs" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
+              className={`inline-flex items-center font-sans text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-medium transition-colors whitespace-nowrap ${pathname === "/blogs" ? "text-primary dark:text-primary-fixed font-semibold" : "text-on-surface-variant hover:text-primary"
                 }`}
             >
               Blogs
@@ -375,9 +375,9 @@ export default function Header() {
         {/* Action Button (Desktop - LG and up) */}
         <button
           onClick={() => setContactOpen(true)}
-          className="bg-primary hover:bg-forest-deep text-white px-4 xl:px-5 py-2 xl:py-2.5 rounded-full font-mono text-[11px] xl:text-[12px] font-semibold uppercase tracking-wider transition-all scale-95 hover:scale-100 active:scale-90 hidden lg:flex items-center gap-2 cursor-pointer shadow-sm shrink-0"
+          className="bg-primary hover:bg-forest-deep text-white px-4 xl:px-5 py-2 xl:py-2.5 rounded-full font-mono text-[11px] xl:text-[12px] font-semibold uppercase tracking-wider transition-all scale-95 hover:scale-100 active:scale-90 hidden lg:inline-flex items-center gap-2 cursor-pointer shadow-sm shrink-0 whitespace-nowrap"
         >
-          Let's Talk
+          <span>Let's Talk</span>
           <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
         </button>
 
