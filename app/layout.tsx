@@ -20,15 +20,37 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Custom Shopify Development Agency | High-Converting Stores – Create My Shop",
-  description: "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
+  title: "Custom Shopify Development Agency | Create My Shop",
+  description:
+    "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
   keywords: [
     "Shopify web development agency",
     "custom Shopify store design",
     "Shopify developers",
     "e-commerce web design",
     "Shopify Liquid experts",
+    "custom Shopify themes",
+    "Shopify CRO",
+    "Shopify migration",
   ],
+  openGraph: {
+    title: "Custom Shopify Development Agency | Create My Shop",
+    description:
+      "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
+    siteName: "Create My Shop",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Shopify Development Agency | Create My Shop",
+    description:
+      "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

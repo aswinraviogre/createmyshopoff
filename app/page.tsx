@@ -111,7 +111,7 @@ export default function Home() {
             Premium Shopify Developers &amp; E-commerce Agency
           </div>
           <h1 className="font-sans text-[34px] sm:text-[46px] md:text-[56px] lg:text-[64px] font-normal text-on-surface dark:text-white mb-6 tracking-tight leading-[1.15] max-w-6xl">
-            Custom Shopify Development Agency
+            Custom <span className="text-[#5E8E3E] dark:text-[#95BF47] font-semibold">Shopify</span> Development Agency
             <br />
             | Create My Shop
           </h1>
