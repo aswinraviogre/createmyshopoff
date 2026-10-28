@@ -6,6 +6,7 @@ import ContactModal from "@/components/ContactModal";
 import { CLIENT_PROJECTS, FEATURED_PROJECTS } from "@/data/projects";
 import ShopifyAppDev from "@/components/ShopifyAppDev";
 import WhatsAppAutomation from "@/components/WhatsAppAutomation";
+import ProprietarySoftware from "@/components/ProprietarySoftware";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -198,6 +199,9 @@ export default function Home() {
 
       {/* WhatsApp Ecommerce Automation Section */}
       <WhatsAppAutomation onContactClick={() => setContactOpen(true)} />
+
+      {/* Proprietary Software Built By Us - PostBus & VaChat */}
+      <ProprietarySoftware onContactClick={() => setContactOpen(true)} />
 
       {/* Selected Works - Real Client Projects */}
       <section className="py-[120px] px-6 md:px-12 bg-white dark:bg-[#181818] border-b border-primary/5">

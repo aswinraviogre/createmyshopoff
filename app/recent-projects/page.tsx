@@ -51,6 +51,104 @@ export default function RecentProjects() {
           </div>
         </section>
 
+        {/* Proprietary Software Spotlight */}
+        <section className="mb-16 fade-up">
+          <div className="bg-gradient-to-br from-surface to-forest-light/30 dark:from-[#181818] dark:to-[#121212] border border-primary/10 rounded-[32px] p-8 md:p-10 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white dark:bg-white/5 text-primary rounded-full font-mono text-[10px] uppercase tracking-wider mb-2 select-none border border-primary/10">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
+                  Proprietary Software Ecosystem
+                </div>
+                <h2 className="font-display text-2xl md:text-3xl font-black text-on-surface uppercase">
+                  Software Built by Us
+                </h2>
+              </div>
+              <p className="font-sans text-xs md:text-sm text-on-surface-variant max-w-md">
+                In addition to 16+ client store builds, we engineer and operate two market-leading SaaS platforms for shipping automation and WhatsApp AI commerce.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* PostBus */}
+              <div className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition-all">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="h-12 px-3 py-1.5 bg-white dark:bg-[#202020] rounded-xl border border-primary/10 flex items-center justify-center">
+                      <img src="/software/postbus-logo.webp" alt="PostBus Logo" className="max-h-7 w-auto object-contain" />
+                    </div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#E11D48]/10 text-[#E11D48] font-bold">
+                      postbus.in
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-on-surface">PostBus</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    India Post shipping software for ecommerce brands. Connect existing Customer IDs, print bulk labels, and track shipments in one dashboard.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <span className="font-sans text-[10px] font-semibold px-2 py-0.5 rounded-md bg-surface dark:bg-white/5 border border-primary/5">1-Click CEPT Booking</span>
+                    <span className="font-sans text-[10px] font-semibold px-2 py-0.5 rounded-md bg-surface dark:bg-white/5 border border-primary/5">Shopify Order Sync</span>
+                    <span className="font-sans text-[10px] font-semibold px-2 py-0.5 rounded-md bg-surface dark:bg-white/5 border border-primary/5">Live AWB Tracking</span>
+                  </div>
+                </div>
+                <div className="pt-6 mt-6 border-t border-primary/5 flex items-center justify-between select-none">
+                  <span className="font-mono text-[10px] text-emerald-600 font-bold uppercase flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                    Live Production SaaS
+                  </span>
+                  <a
+                    href="https://www.postbus.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-mono text-xs font-bold text-[#E11D48] hover:underline"
+                  >
+                    Visit Website
+                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* VaChat */}
+              <div className="bg-white dark:bg-surface-dark border border-primary/10 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition-all">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="h-12 px-3 py-1.5 bg-white dark:bg-[#202020] rounded-xl border border-primary/10 flex items-center justify-center">
+                      <img src="/software/vachat-logo.svg" alt="VaChat Logo" className="max-h-7 w-auto object-contain" />
+                    </div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#03cf65]/10 text-[#03cf65] font-bold">
+                      vachat.in
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-on-surface">VaChat</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    AI WhatsApp Marketing & CRM platform. Turn conversations into real Shopify orders with 24/7 autonomous sales agents and in-chat checkout.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <span className="font-sans text-[10px] font-semibold px-2 py-0.5 rounded-md bg-surface dark:bg-white/5 border border-primary/5">24/7 AI Sales Agents</span>
+                    <span className="font-sans text-[10px] font-semibold px-2 py-0.5 rounded-md bg-surface dark:bg-white/5 border border-primary/5">Shopify Catalog Sync</span>
+                    <span className="font-sans text-[10px] font-semibold px-2 py-0.5 rounded-md bg-surface dark:bg-white/5 border border-primary/5">In-Chat Checkout</span>
+                  </div>
+                </div>
+                <div className="pt-6 mt-6 border-t border-primary/5 flex items-center justify-between select-none">
+                  <span className="font-mono text-[10px] text-emerald-600 font-bold uppercase flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                    Live Production SaaS
+                  </span>
+                  <a
+                    href="https://vachat.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-mono text-xs font-bold text-[#03cf65] hover:underline"
+                  >
+                    Visit Website
+                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Category Filters Bar */}
         <section className="mb-12 fade-up">
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none select-none">

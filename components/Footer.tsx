@@ -112,6 +112,75 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* Proprietary Software Built by Us Banner */}
+            <div className="bg-white dark:bg-[#181818] border border-primary/10 dark:border-white/5 rounded-3xl p-6 shadow-sm space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-primary/5 pb-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse" />
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">
+                    Software Built by Us
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono text-on-surface-variant/70 uppercase tracking-wider">
+                  Proprietary SaaS Ecosystem
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* PostBus */}
+                <a
+                  href="https://www.postbus.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-surface dark:bg-white/5 border border-primary/5 hover:border-[#E11D48]/30 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-white dark:bg-[#202020] border border-primary/10 flex items-center justify-center p-1.5 shrink-0 shadow-xs">
+                    <img src="/software/postbus-logo.webp" alt="PostBus Logo" className="max-h-7 w-auto object-contain" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between">
+                      <h5 className="font-sans text-xs font-bold text-on-surface group-hover:text-[#E11D48] transition-colors">
+                        PostBus
+                      </h5>
+                      <span className="material-symbols-outlined text-xs text-[#E11D48] opacity-70 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <p className="font-sans text-[11px] text-on-surface-variant line-clamp-2 mt-0.5 leading-snug">
+                      India Post Shipping & CEPT automated order management platform
+                    </p>
+                    <span className="inline-block mt-1 font-mono text-[9px] text-[#E11D48] font-bold uppercase">
+                      postbus.in →
+                    </span>
+                  </div>
+                </a>
+
+                {/* VaChat */}
+                <a
+                  href="https://vachat.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-surface dark:bg-white/5 border border-primary/5 hover:border-[#03cf65]/30 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-white dark:bg-[#202020] border border-primary/10 flex items-center justify-center p-1.5 shrink-0 shadow-xs">
+                    <img src="/software/vachat-logo.svg" alt="VaChat Logo" className="max-h-7 w-auto object-contain" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between">
+                      <h5 className="font-sans text-xs font-bold text-on-surface group-hover:text-[#03cf65] transition-colors">
+                        VaChat
+                      </h5>
+                      <span className="material-symbols-outlined text-xs text-[#03cf65] opacity-70 group-hover:opacity-100">open_in_new</span>
+                    </div>
+                    <p className="font-sans text-[11px] text-on-surface-variant line-clamp-2 mt-0.5 leading-snug">
+                      AI WhatsApp marketing, CRM & autonomous sales agents for Shopify
+                    </p>
+                    <span className="inline-block mt-1 font-mono text-[9px] text-[#03cf65] font-bold uppercase">
+                      vachat.in →
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
             {/* Divider line */}
             <div className="w-full h-px bg-primary/5 dark:bg-white/5" />
 

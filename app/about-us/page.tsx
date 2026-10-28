@@ -239,6 +239,110 @@ export default function AboutUs() {
         </div>
       </section>
 
+      {/* Proprietary Software Built by Us Section */}
+      <section className="py-[100px] px-6 md:px-12 bg-white dark:bg-[#181818] border-t border-primary/5">
+        <div className="max-w-[1200px] mx-auto space-y-12">
+          <div className="max-w-2xl fade-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none">
+              <span className="material-symbols-outlined text-primary text-[14px]">code_blocks</span>
+              <span className="text-primary font-semibold">Our In-House Products</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase">
+              Software Built by Us
+            </h2>
+            <p className="font-sans text-base text-on-surface-variant mt-2">
+              We don’t just consult and design for clients. We invent, engineer, and operate proprietary SaaS platforms that solve fundamental logistics and conversational commerce bottlenecks.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 fade-up">
+            {/* PostBus Card */}
+            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-3xl p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
+              <div className="space-y-5">
+                <div className="flex items-center justify-between">
+                  <div className="h-14 px-3 py-2 bg-white dark:bg-[#202020] rounded-xl border border-primary/10 flex items-center justify-center">
+                    <img src="/software/postbus-logo.webp" alt="PostBus Logo" className="max-h-8 w-auto object-contain" />
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-[#E11D48]/10 text-[#E11D48] font-bold">
+                    Shipping SaaS
+                  </span>
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-on-surface mb-2">PostBus</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    India Post shipping software for ecommerce brands. Connect your existing Customer ID to manage orders, print compliant labels, and track shipments in one dashboard.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-center pt-2">
+                  <div className="bg-white dark:bg-white/5 p-2.5 rounded-xl border border-primary/5">
+                    <div className="font-bold text-sm text-[#E11D48]">1-Click</div>
+                    <div className="text-[10px] text-on-surface-variant">CEPT Booking</div>
+                  </div>
+                  <div className="bg-white dark:bg-white/5 p-2.5 rounded-xl border border-primary/5">
+                    <div className="font-bold text-sm text-[#E11D48]">100%</div>
+                    <div className="text-[10px] text-on-surface-variant">Shopify Sync</div>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-6 mt-6 border-t border-primary/5 flex items-center justify-between">
+                <span className="font-mono text-[11px] text-on-surface-variant/70 font-semibold">Live Production</span>
+                <a
+                  href="https://www.postbus.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#E11D48] hover:underline"
+                >
+                  Visit postbus.in
+                  <span className="material-symbols-outlined text-sm">open_in_new</span>
+                </a>
+              </div>
+            </div>
+
+            {/* VaChat Card */}
+            <div className="bg-surface dark:bg-surface-dark border border-primary/10 rounded-3xl p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
+              <div className="space-y-5">
+                <div className="flex items-center justify-between">
+                  <div className="h-14 px-3 py-2 bg-white dark:bg-[#202020] rounded-xl border border-primary/10 flex items-center justify-center">
+                    <img src="/software/vachat-logo.svg" alt="VaChat Logo" className="max-h-8 w-auto object-contain" />
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-[#03cf65]/10 text-[#03cf65] font-bold">
+                    AI WhatsApp CRM
+                  </span>
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-on-surface mb-2">VaChat</h3>
+                  <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                    Official Meta WhatsApp Business CRM with autonomous 24/7 AI sales agents, live Shopify product catalog sync, AI voice calling, and seamless in-chat checkout.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-center pt-2">
+                  <div className="bg-white dark:bg-white/5 p-2.5 rounded-xl border border-primary/5">
+                    <div className="font-bold text-sm text-[#03cf65]">98%</div>
+                    <div className="text-[10px] text-on-surface-variant">Open Rates</div>
+                  </div>
+                  <div className="bg-white dark:bg-white/5 p-2.5 rounded-xl border border-primary/5">
+                    <div className="font-bold text-sm text-[#03cf65]">24/7</div>
+                    <div className="text-[10px] text-on-surface-variant">AI Sales Agents</div>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-6 mt-6 border-t border-primary/5 flex items-center justify-between">
+                <span className="font-mono text-[11px] text-on-surface-variant/70 font-semibold">Live Production</span>
+                <a
+                  href="https://vachat.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#03cf65] hover:underline"
+                >
+                  Visit vachat.in
+                  <span className="material-symbols-outlined text-sm">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Team Section */}
       <section className="py-[120px] px-6 md:px-12 bg-surface border-t border-primary/5">
         <div className="max-w-[1200px] mx-auto space-y-12">
