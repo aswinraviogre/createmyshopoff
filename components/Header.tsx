@@ -103,11 +103,19 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 select-none shrink-0 min-w-0">
           <Link
             href="/"
-            className="flex items-center gap-1.5 sm:gap-2 select-none shrink-0"
+            className="flex items-center select-none shrink-0"
+            aria-label="Create My Shop — Home"
           >
-            <span className="font-display text-[15px] sm:text-[17px] md:text-[19px] lg:text-[20px] xl:text-[21px] font-bold text-on-surface tracking-tight whitespace-nowrap">
-              Create my shop
-            </span>
+            <img
+              src="/logo.png"
+              alt="Create My Shop - Shopify Web Development Agency"
+              className="h-8 sm:h-9 md:h-[38px] w-auto object-contain dark:hidden"
+            />
+            <img
+              src="/logo-dark.png"
+              alt="Create My Shop - Shopify Web Development Agency"
+              className="h-8 sm:h-9 md:h-[38px] w-auto object-contain hidden dark:block"
+            />
           </Link>
 
           {/* PostBus & VaChat Senior UI/UX Ecosystem Badges - Visible on XL screens (1280px+) where horizontal space allows */}
@@ -423,8 +431,24 @@ export default function Header() {
       >
         <div className="flex flex-col gap-5">
           {/* Header row inside drawer with Logo and Close button */}
-          <div className="flex items-center justify-between pb-3 border-b border-primary/10 select-none">
-            <span className="font-display text-[18px] sm:text-[20px] font-bold text-on-surface tracking-tight">Create my shop</span>
+          <div className="flex items-center justify-between pb-2 border-b border-primary/10">
+            <Link
+              href="/"
+              onClick={handleLinkClick}
+              className="flex items-center select-none shrink-0"
+              aria-label="Create My Shop"
+            >
+              <img
+                src="/logo.png"
+                alt="Create My Shop"
+                className="h-8 w-auto object-contain dark:hidden"
+              />
+              <img
+                src="/logo-dark.png"
+                alt="Create My Shop"
+                className="h-8 w-auto object-contain hidden dark:block"
+              />
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="w-8 h-8 rounded-full bg-surface dark:bg-white/10 flex items-center justify-center text-on-surface border border-primary/10 hover:bg-forest-light transition-colors"

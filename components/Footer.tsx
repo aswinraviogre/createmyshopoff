@@ -309,7 +309,7 @@ export default function Footer() {
               </div>
 
               <p className="font-sans text-[11px] text-on-surface-variant opacity-75">
-                © {new Date().getFullYear()} Mayday Internet. All rights reserved.
+                © {new Date().getFullYear()} Create My Shop. All rights reserved.
               </p>
             </div>
 
