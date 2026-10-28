@@ -232,6 +232,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section 3: Proprietary Software Built By Us - PostBus & VaChat */}
+      <ProprietarySoftware onContactClick={() => setContactOpen(true)} />
+
       {/* Why Choose Us Section */}
       <section className="py-[120px] bg-primary-container text-white px-6 md:px-12 fade-up relative overflow-hidden">
         <div className="max-w-[1000px] mx-auto text-center relative z-10">
@@ -286,9 +289,6 @@ export default function Home() {
 
       {/* WhatsApp Ecommerce Automation Section */}
       <WhatsAppAutomation onContactClick={() => setContactOpen(true)} />
-
-      {/* Proprietary Software Built By Us - PostBus & VaChat */}
-      <ProprietarySoftware onContactClick={() => setContactOpen(true)} />
 
       {/* Selected Works - Real Client Projects */}
       <section className="py-[120px] px-6 md:px-12 bg-white dark:bg-[#181818] border-b border-primary/5">

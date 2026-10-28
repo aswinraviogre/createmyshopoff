@@ -20,6 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://createmyshop.com"),
   title: "Custom Shopify Development Agency | Create My Shop",
   description:
     "Scale your e-commerce brand with Create My Shop. We build lightning-fast custom Shopify stores, bespoke Liquid themes, and high-performance retail experiences.",
@@ -53,6 +54,39 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://createmyshop.com/#organization",
+      name: "Create My Shop",
+      url: "https://createmyshop.com",
+      description:
+        "High-performance Shopify development agency building custom storefronts, bespoke Liquid themes, PostBus shipping software, and VaChat AI WhatsApp automation.",
+      sameAs: ["https://www.postbus.in", "https://vachat.in"],
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "PostBus",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://www.postbus.in",
+      description:
+        "India Post Speed Post & Business Parcel shipping and barcode label automation software for Shopify merchants.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "VaChat",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://vachat.in",
+      description:
+        "AI WhatsApp marketing, abandoned checkout recovery, and automated COD verification platform for Shopify stores.",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -67,6 +101,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-surface text-on-surface">

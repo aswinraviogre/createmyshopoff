@@ -1,20 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import ContactModal from "@/components/ContactModal";
-
-interface BlogPost {
-  title: string;
-  date: string;
-  readTime: string;
-  category: string;
-  href: string;
-  excerpt: string;
-  image: string;
-}
+import { BLOG_POSTS, BlogPost } from "@/data/blogs";
 
 export default function Blogs() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [selectedTag, setSelectedTag] = useState<string>("All");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,71 +28,75 @@ export default function Blogs() {
     return () => observer.disconnect();
   }, []);
 
-  const posts: BlogPost[] = [
-    {
-      title: "Why Shopify Transaction Fees Don’t Apply to Quick Checkouts Like GoKwik, Razorpay Magic Checkout & Shopflo in India — and How Long This Will Last",
-      date: "July 27, 2026",
-      readTime: "8 min Read",
-      category: "Checkouts • Shopify",
-      href: "/why-shopify-transaction-fees-dont-apply-to-quick-checkouts-like-gokwik-razorpay-magic-checkout-shopflo-in-india-and-how-long-this-will-last",
-      excerpt:
-        "Understand the mechanics behind third-party checkout redirects in India, why they bypass standard Shopify transaction fees, and Vercel/Shopify's upcoming policy updates on headless integrations.",
-      image: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Why-Shopify-Transaction.png",
-    },
-    {
-      title: "Payment Gateway Reconciliation for Indian E-commerce: Methods, Software, GST & Best Practices",
-      date: "June 11, 2026",
-      readTime: "8 min Read",
-      category: "Ecommerce • Payment Gateway",
-      href: "/payment-gateway-reconciliation-for-indian-e-commerce-methods-software-gst-best-practices",
-      excerpt:
-        "A practical blueprint on accounting reconciliation. How to automatically audit settlement accounts against orders, manage refunds, verify transaction charges, and audit GST invoicing.",
-      image: "https://www.maydayinternet.com/wp-content/uploads/2026/06/Payment-Gateway-Reconciliation-scaled.jpeg",
-    },
-    {
-      title: "Engineering Greener Ecosystems: The Mayday Internet Sustainability Framework",
-      date: "June 8, 2026",
-      readTime: "8 min Read",
-      category: "Shopify",
-      href: "/sustainability-roadmap",
-      excerpt:
-        "Reducing carbon footprints on modern headless storefronts. How we design asset pipelines, optimize hosting infrastructure, and minimize execution queries to build green eco-conscious ecommerce.",
-      image: "https://www.maydayinternet.com/wp-content/uploads/2026/05/magnific_photorealistic-indian-eco_2938431220-e1780911927429.png",
-    },
-  ];
+  const filteredPosts =
+    selectedTag === "All"
+      ? BLOG_POSTS
+      : BLOG_POSTS.filter((p) => p.productTag === selectedTag);
 
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="pt-36 pb-[160px] w-full max-w-[1000px] mx-auto px-6 md:px-12">
+      <main className="pt-36 pb-[160px] w-full max-w-[1050px] mx-auto px-6 md:px-12">
         {/* Header Section */}
-        <section className="mb-20 fade-up">
-          <div className="max-w-2xl">
+        <section className="mb-14 fade-up">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-forest-light text-primary rounded-full font-mono text-[10px] uppercase tracking-wider mb-6 select-none border border-primary/10">
               <span className="material-symbols-outlined text-[14px]">feed</span>
-              Latest Updates
+              E-Commerce &amp; Engineering Insights
             </div>
             <h1 className="font-display text-4xl md:text-6xl font-black text-on-surface mb-6 uppercase leading-tight">
               Blogs &amp; News
             </h1>
-            <p className="font-sans text-[18px] leading-[30px] text-on-surface-variant">
-              Stay ahead of trends, updates, and growth strategies with our expert-written insights.
+            <p className="font-sans text-[18px] leading-[30px] text-on-surface-variant max-w-2xl">
+              In-depth engineering breakdowns, Shopify CRO guides, India Post shipping with PostBus, and WhatsApp AI automation with VaChat.
             </p>
+          </div>
+
+          {/* Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2.5 mt-8 select-none">
+            {["All", "PostBus", "VaChat", "Shopify"].map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSelectedTag(tag)}
+                className={`px-4 py-1.5 rounded-full font-sans text-xs font-bold transition-all cursor-pointer ${
+                  selectedTag === tag
+                    ? "bg-primary text-white shadow-sm"
+                    : "bg-white dark:bg-surface-dark border border-primary/10 text-on-surface-variant hover:text-on-surface"
+                }`}
+              >
+                {tag === "All" ? "All Articles" : tag}
+              </button>
+            ))}
           </div>
         </section>
 
         {/* Blog Post List */}
         <section className="space-y-8">
-          {posts.map((post, idx) => (
-            <article key={idx} className="group bg-white dark:bg-surface-dark border border-primary/10 rounded-3xl p-6 md:p-8 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-md cursor-pointer flex flex-col md:flex-row gap-6 md:gap-8 justify-between fade-up items-stretch">
-              <div className="w-full md:w-[280px] shrink-0 aspect-[16/10] rounded-2xl overflow-hidden bg-surface-container shadow-sm border border-primary/5">
+          {filteredPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blogs/${post.slug}`}
+              className="group bg-white dark:bg-surface-dark border border-primary/10 rounded-3xl p-6 md:p-8 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-lg cursor-pointer flex flex-col md:flex-row gap-6 md:gap-8 justify-between fade-up items-stretch block"
+            >
+              <div className="w-full md:w-[290px] shrink-0 aspect-[16/10] rounded-2xl overflow-hidden bg-surface-container shadow-sm border border-primary/5 relative">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
+                {post.productTag && post.productTag !== "Shopify" && (
+                  <span
+                    className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-full font-mono text-[9px] font-bold uppercase tracking-wider text-white shadow-sm ${
+                      post.productTag === "PostBus"
+                        ? "bg-[#E11D48]"
+                        : "bg-[#03cf65]"
+                    }`}
+                  >
+                    {post.productTag}
+                  </span>
+                )}
               </div>
-              <div className="flex flex-col justify-between flex-1">
+              <div className="flex flex-col justify-between flex-1 min-w-0">
                 <div>
                   <div className="flex items-center gap-2 select-none mb-3 text-[11px] font-sans text-on-surface-variant">
                     <span>{post.date}</span>
@@ -113,19 +110,23 @@ export default function Blogs() {
                   <h2 className="font-sans text-xl md:text-2xl font-bold text-on-surface dark:text-white group-hover:text-primary transition-colors leading-snug">
                     {post.title}
                   </h2>
-                  <p className="font-sans text-sm text-on-surface-variant dark:text-white/70 leading-relaxed mt-3">
+                  <p className="font-sans text-sm text-on-surface-variant dark:text-white/70 leading-relaxed mt-3 line-clamp-2">
                     {post.excerpt}
                   </p>
                 </div>
                 <div className="pt-4 border-t border-primary/5 mt-6 flex justify-between items-center select-none">
-                  <span className="font-mono text-xs font-bold text-primary flex items-center gap-1">
+                  <span className="font-mono text-xs font-bold text-primary flex items-center gap-1 group-hover:underline">
                     Read Full Article
-                    <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                      arrow_forward
+                    </span>
                   </span>
-                  <span className="font-sans text-xs text-on-surface-variant opacity-75">By Mayday Editorial</span>
+                  <span className="font-sans text-xs text-on-surface-variant opacity-75">
+                    By {post.author.name}
+                  </span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </section>
 

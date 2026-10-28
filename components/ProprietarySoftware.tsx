@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { SOFTWARE_PRODUCTS, SoftwareProduct } from "@/data/software";
 
 interface ProprietarySoftwareProps {
@@ -132,24 +133,36 @@ export default function ProprietarySoftware({
                 </div>
 
                 {/* External Action Button */}
-                <div className="lg:col-span-5 flex flex-wrap items-center justify-start lg:justify-end gap-3 select-none">
+                <div className="lg:col-span-5 flex flex-wrap items-center justify-start lg:justify-end gap-2.5 select-none">
                   <a
                     href={product.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-sans text-xs md:text-sm font-bold shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200"
+                    className="inline-flex items-center gap-1.5 text-white px-5 py-2.5 rounded-full font-sans text-xs md:text-sm font-bold shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200"
                     style={{ backgroundColor: product.accentColor }}
                   >
                     <span>Visit {product.displayUrl}</span>
                     <span className="material-symbols-outlined text-sm">open_in_new</span>
                   </a>
 
+                  <Link
+                    href={
+                      product.id === "postbus"
+                        ? "/blogs/how-postbus-streamlines-india-post-shipping-for-shopify"
+                        : "/blogs/how-vachat-recovers-abandoned-carts-with-ai-whatsapp-crm"
+                    }
+                    className="inline-flex items-center gap-1.5 border border-primary/20 dark:border-white/20 hover:border-primary text-on-surface px-4 py-2.5 rounded-full font-sans text-xs md:text-sm font-semibold hover:bg-forest-light dark:hover:bg-white/5 transition-all cursor-pointer"
+                  >
+                    <span>Read Guide</span>
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
+
                   {onContactClick && (
                     <button
                       onClick={onContactClick}
-                      className="inline-flex items-center gap-1.5 border border-primary/20 dark:border-white/20 hover:border-primary text-on-surface px-4 py-3 rounded-full font-sans text-xs md:text-sm font-semibold hover:bg-forest-light dark:hover:bg-white/5 transition-all cursor-pointer"
+                      className="inline-flex items-center gap-1.5 border border-primary/10 dark:border-white/10 text-on-surface-variant hover:text-primary px-3 py-2.5 rounded-full font-sans text-xs font-medium hover:bg-forest-light dark:hover:bg-white/5 transition-all cursor-pointer"
                     >
-                      <span>Inquire Integration</span>
+                      <span>Inquire</span>
                     </button>
                   )}
                 </div>
