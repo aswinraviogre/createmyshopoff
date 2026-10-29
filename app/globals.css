@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Dark styles only apply when a `.dark` class is set, never from the OS setting */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #00522d;
   --color-primary-container: #006d3e;
@@ -25,6 +28,7 @@
 }
 
 :root {
+  color-scheme: only light;
   --background: #fcf9f8;
   --foreground: #1c1b1b;
 }
