@@ -1,6 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import {
+  CONTACT_PHONE,
+  getWhatsAppUrl,
+  buildModalInquiryMessage,
+} from "@/data/contact";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -22,11 +27,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call
+    const msg = buildModalInquiryMessage(formData);
+    const waUrl = getWhatsAppUrl(msg);
+
     setTimeout(() => {
       setLoading(false);
       setFormSubmitted(true);
-    }, 1200);
+      if (typeof window !== "undefined") {
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+      }
+    }, 400);
   };
 
   const handleReset = () => {
@@ -67,6 +77,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <p className="text-sm text-secondary mt-2">
                 Have a migration, build, or growth puzzle? We are ready to help you solve it carefully.
               </p>
+
+              {/* Instant WhatsApp Quick Button */}
+              <a
+                href={getWhatsAppUrl("Hello Create My Shop Team! I would like to quickly chat about an e-commerce project.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-[#128C7E] dark:text-[#25D366] font-sans text-xs font-bold transition-all mt-4 select-none"
+              >
+                <span className="material-symbols-outlined text-[16px]">chat</span>
+                <span>Or Chat Directly on WhatsApp: {CONTACT_PHONE}</span>
+              </a>
             </div>
 
             <div className="space-y-4">
@@ -126,43 +147,60 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               </div>
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-primary hover:bg-forest-deep text-white py-4 rounded-xl font-mono text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-            >
-              {loading ? (
-                <>
-                  <span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></span>
-                  Sending Details...
-                </>
-              ) : (
-                <>
-                  Submit Inquiry
-                  <span className="material-symbols-outlined text-[16px]">send</span>
-                </>
-              )}
-            </button>
+            <div className="space-y-2">
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-4 rounded-xl font-mono text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-md hover:shadow-lg active:scale-[0.99]"
+              >
+                {loading ? (
+                  <>
+                    <span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></span>
+                    Connecting to WhatsApp...
+                  </>
+                ) : (
+                  <>
+                    Submit Inquiry via WhatsApp
+                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </>
+                )}
+              </button>
+              <p className="text-[10px] text-center text-on-surface-variant/70 font-sans">
+                Opens directly in WhatsApp with <strong>{CONTACT_PHONE}</strong>
+              </p>
+            </div>
           </form>
         ) : (
-          <div className="text-center py-8 space-y-6">
-            <div className="w-16 h-16 bg-forest-light text-primary rounded-full flex items-center justify-center mx-auto shadow-md">
-              <span className="material-symbols-outlined text-3xl font-bold">check</span>
+          <div className="text-center py-6 space-y-6">
+            <div className="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center mx-auto shadow-md">
+              <span className="material-symbols-outlined text-3xl font-bold">chat</span>
             </div>
-            <div>
+            <div className="space-y-2">
               <h2 className="font-display text-2xl font-extrabold text-on-surface">
                 Thank you, {formData.name}!
               </h2>
-              <p className="text-sm text-secondary mt-2 max-w-sm mx-auto">
-                We've received your request. A partner will review your details and reach out within 2 hours.
+              <p className="text-sm text-secondary max-w-sm mx-auto leading-relaxed">
+                Your inquiry has been formatted and redirected to our WhatsApp team at{" "}
+                <strong className="font-mono text-primary">{CONTACT_PHONE}</strong>.
               </p>
             </div>
-            <button
-              onClick={handleReset}
-              className="bg-primary hover:bg-forest-deep text-white px-6 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer"
-            >
-              Back to Site
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href={getWhatsAppUrl(buildModalInquiryMessage(formData))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all shadow-md flex items-center gap-2"
+              >
+                <span>Open WhatsApp Chat</span>
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+              <button
+                onClick={handleReset}
+                className="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-3 rounded-full font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer"
+              >
+                Back to Site
+              </button>
+            </div>
           </div>
         )}
       </div>

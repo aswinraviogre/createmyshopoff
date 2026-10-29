@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import {
+  CONTACT_PHONE,
+  getWhatsAppUrl,
+  buildFitFormMessage,
+} from "@/data/contact";
 
 export default function FitForm() {
   const [formData, setFormData] = useState({
@@ -17,23 +22,62 @@ export default function FitForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call
+    const msg = buildFitFormMessage(formData);
+    const waUrl = getWhatsAppUrl(msg);
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 1200);
+      if (typeof window !== "undefined") {
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+      }
+    }, 400);
   };
 
   if (submitted) {
+    const waUrl = getWhatsAppUrl(buildFitFormMessage(formData));
     return (
-      <div className="border-0 p-8 text-center flex flex-col items-center justify-center space-y-4 animate-[fadeIn_0.3s_ease-out]">
-        <div className="w-16 h-16 bg-forest-light text-primary rounded-full flex items-center justify-center shrink-0 shadow-sm animate-bounce">
-          <span className="material-symbols-outlined text-3xl font-black">done</span>
+      <div className="border-0 p-8 text-center flex flex-col items-center justify-center space-y-5 animate-[fadeIn_0.3s_ease-out]">
+        <div className="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center shrink-0 shadow-sm animate-bounce">
+          <span className="material-symbols-outlined text-3xl font-black">chat</span>
         </div>
-        <h3 className="font-display text-xl font-extrabold text-on-surface uppercase tracking-tight">Message Received!</h3>
-        <p className="font-sans text-xs text-on-surface-variant max-w-xs leading-relaxed">
-          Thank you, {formData.name}. Our engineering team will review your project details and get back to you promptly.
-        </p>
+        <div className="space-y-2">
+          <h3 className="font-display text-xl font-extrabold text-on-surface uppercase tracking-tight">
+            Redirecting to WhatsApp
+          </h3>
+          <p className="font-sans text-xs text-on-surface-variant max-w-sm leading-relaxed">
+            Thank you, <span className="font-semibold text-on-surface">{formData.name}</span>. Your enquiry details have been pre-filled for our team at{" "}
+            <span className="font-bold text-primary font-mono">{CONTACT_PHONE}</span>.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 shadow-md hover:shadow-lg active:scale-95"
+          >
+            <span>Open WhatsApp Chat</span>
+            <span className="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              setSubmitted(false);
+              setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                projectType: "New Store Build",
+                details: "",
+              });
+            }}
+            className="text-xs font-sans text-on-surface-variant hover:text-on-surface underline py-2 cursor-pointer"
+          >
+            Submit Another Enquiry
+          </button>
+        </div>
       </div>
     );
   }
@@ -127,23 +171,28 @@ export default function FitForm() {
       </div>
 
       {/* Row 5: Submit Button */}
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-[#b3e620] hover:bg-[#9ccc1c] disabled:bg-[#b3e620]/60 text-on-surface px-8 py-4 rounded-full font-sans text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-95 duration-150 select-none w-fit"
-      >
-        {loading ? (
-          <>
-            <span className="w-4 h-4 border-2 border-on-surface border-t-transparent rounded-full animate-spin"></span>
-            Starting...
-          </>
-        ) : (
-          <>
-            Get Started
-            <span className="material-symbols-outlined text-base">arrow_forward</span>
-          </>
-        )}
-      </button>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+        <button
+          type="submit"
+          disabled={loading}
+          className="bg-[#b3e620] hover:bg-[#9ccc1c] disabled:bg-[#b3e620]/60 text-on-surface px-8 py-4 rounded-full font-sans text-sm font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-95 duration-150 select-none w-fit"
+        >
+          {loading ? (
+            <>
+              <span className="w-4 h-4 border-2 border-on-surface border-t-transparent rounded-full animate-spin"></span>
+              Connecting to WhatsApp...
+            </>
+          ) : (
+            <>
+              <span>Get Started via WhatsApp</span>
+              <span className="material-symbols-outlined text-base">arrow_forward</span>
+            </>
+          )}
+        </button>
+        <span className="font-sans text-[11px] text-on-surface-variant/70">
+          Direct WhatsApp routing: <strong className="font-mono text-primary font-semibold">{CONTACT_PHONE}</strong>
+        </span>
+      </div>
     </form>
   );
 }

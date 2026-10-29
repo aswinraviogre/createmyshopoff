@@ -167,7 +167,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Understand the mechanics behind third-party checkout redirects in India, why they bypass standard Shopify transaction fees, and upcoming policy updates on headless integrations.",
     metaDescription:
       "Deep dive into third-party 1-click checkouts in India (GoKwik, Razorpay Magic, Shopflo), Shopify transaction fee mechanics, draft order conversions, and upcoming platform policies.",
-    image: "https://www.maydayinternet.com/wp-content/uploads/2026/07/Why-Shopify-Transaction.png",
+    image: "/blogs/why-shopify-transaction.png",
     content: {
       lead:
         "Accelerated checkout solutions like GoKwik, Razorpay Magic Checkout, and Shopflo have taken Indian e-commerce by storm, offering pre-filled address databases and higher UPI conversion rates. An unexpected bonus for merchants has been bypassing Shopify's standard 0.5% to 2.0% third-party gateway transaction fees. Here is how it works under the hood and what the future holds.",
@@ -204,7 +204,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A practical blueprint on accounting reconciliation. How to automatically audit settlement accounts against orders, manage refunds, verify transaction charges, and audit GST invoicing.",
     metaDescription:
       "Complete guide to payment gateway reconciliation for Indian Shopify brands: handling Razorpay, Cashfree, and PayU settlements, GST credit on gateway MDR fees, and automated refund matching.",
-    image: "https://www.maydayinternet.com/wp-content/uploads/2026/06/Payment-Gateway-Reconciliation-scaled.jpeg",
+    image: "/blogs/payment-gateway-reconciliation.jpeg",
     content: {
       lead:
         "Processing thousands of prepaid UPI, credit card, and COD orders creates an accounting nightmare if settlements do not match bank deposits. From MDR fee variances to delayed COD remittances, here is how leading Indian D2C brands maintain flawless ledger reconciliation.",
@@ -236,7 +236,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Reducing carbon footprints on modern storefronts. How we design asset pipelines, optimize hosting infrastructure, and minimize execution queries to build green eco-conscious ecommerce.",
     metaDescription:
       "Learn how clean Shopify Liquid code, WebP image formats, and edge caching slash server CPU cycles, improve Google Core Web Vitals, and build sustainable e-commerce websites.",
-    image: "https://www.maydayinternet.com/wp-content/uploads/2026/05/magnific_photorealistic-indian-eco_2938431220-e1780911927429.png",
+    image: "/blogs/sustainable-ecommerce.png",
     content: {
       lead:
         "Every kilobyte transferred over mobile networks consumes electricity. Bloated JavaScript trackers, uncompressed 4K banners, and unoptimized DOM trees don't just kill conversion rates—they needlessly consume energy. Here is how we engineer carbon-efficient Shopify storefronts.",

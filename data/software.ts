@@ -36,7 +36,7 @@ export const SOFTWARE_PRODUCTS: SoftwareProduct[] = [
     summary:
       "Connect your existing India Post Customer ID to manage orders, print shipping labels, auto-generate manifests, and track consignments from one unified dashboard.",
     description:
-      "Engineered by Mayday Internet for ecommerce merchants who ship with India Post. PostBus eliminates the manual portal grind by syncing Shopify & custom orders, auto-allocating CEPT barcodes, generating bulk thermal labels, and providing live AWB tracking.",
+      "Engineered by Create My Shop for ecommerce merchants who ship with India Post. PostBus eliminates the manual portal grind by syncing Shopify & custom orders, auto-allocating CEPT barcodes, generating bulk thermal labels, and providing live AWB tracking.",
     url: "https://www.postbus.in/",
     displayUrl: "postbus.in",
     logo: "/software/postbus-logo.webp",
@@ -72,7 +72,7 @@ export const SOFTWARE_PRODUCTS: SoftwareProduct[] = [
       },
     ],
     integrations: ["Shopify", "India Post Speed Post", "CEPT", "Manual Orders", "WooCommerce (Upcoming)"],
-    builtByNote: "Proudly built, maintained, and scaled by Mayday Internet",
+    builtByNote: "Proudly built, maintained, and scaled by Create My Shop",
   },
   {
     id: "vachat",
@@ -119,6 +119,6 @@ export const SOFTWARE_PRODUCTS: SoftwareProduct[] = [
       },
     ],
     integrations: ["Shopify", "Meta Official WABA", "WhatsApp Payments", "Razorpay / UPI", "Multi-Agent Inbox"],
-    builtByNote: "Proudly built, maintained, and scaled by Mayday Internet",
+    builtByNote: "Proudly built, maintained, and scaled by Create My Shop",
   },
 ];

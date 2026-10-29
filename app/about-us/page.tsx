@@ -211,14 +211,14 @@ export default function AboutUs() {
             Founder Message
           </div>
           <h2 className="font-display text-2xl md:text-3xl font-semibold leading-relaxed tracking-tight italic">
-            "Built on Purpose, Grown Through Partnership: The Mayday Internet Philosophy of Enduring Digital Craftsmanship"
+            "Built on Purpose, Grown Through Partnership: The Create My Shop Philosophy of Enduring Digital Craftsmanship"
           </h2>
           <div className="text-center">
             <p className="font-sans text-base leading-relaxed text-white/90 max-w-2xl mx-auto">
-              When we chose the name Mayday, inspired by May Day—Labour Day, it reflected our belief that meaningful work is built by people who care, collaborate, and take pride in what they create. That principle continues to guide us.
+              When we chose the name Create My Shop, it reflected our singular mission: empowering ambitious brands and founders to build, launch, and scale world-class digital storefronts. We believe that meaningful commerce is built by people who care, collaborate, and take pride in what they create. That principle continues to guide us.
             </p>
             <p className="font-sans text-base leading-relaxed text-white/90 max-w-2xl mx-auto mt-4">
-              Mayday Internet has grown through clarity, consistency, and long-term partnership—listening carefully, building intentionally, and earning the trust of organizations across industries through dependable, high-impact digital work.
+              Create My Shop has grown through clarity, consistency, and long-term partnership—listening carefully, building intentionally, and earning the trust of organizations across industries through dependable, high-impact digital work.
             </p>
           </div>
           <div className="pt-4">
@@ -356,7 +356,7 @@ export default function AboutUs() {
           <div className="max-w-2xl fade-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light border border-primary/10 mb-4 font-mono text-[10px] uppercase tracking-wider select-none">
               <span className="material-symbols-outlined text-primary text-[14px]">groups</span>
-              <span className="text-primary font-semibold">Team behind Mayday</span>
+              <span className="text-primary font-semibold">Team behind Create My Shop</span>
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface uppercase">
               Our Team

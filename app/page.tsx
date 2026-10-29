@@ -7,6 +7,11 @@ import { CLIENT_PROJECTS, FEATURED_PROJECTS } from "@/data/projects";
 import ShopifyAppDev from "@/components/ShopifyAppDev";
 import WhatsAppAutomation from "@/components/WhatsAppAutomation";
 import ProprietarySoftware from "@/components/ProprietarySoftware";
+import {
+  CONTACT_PHONE,
+  getWhatsAppUrl,
+  buildConsultationMessage,
+} from "@/data/contact";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -830,26 +835,54 @@ export default function Home() {
             </div>
 
             {formSubmitted ? (
-              <div className="py-10 text-center space-y-4 animate-fade-in">
-                <div className="w-16 h-16 bg-[#b3e620]/20 text-primary dark:text-[#b3e620] rounded-full flex items-center justify-center mx-auto">
-                  <span className="material-symbols-outlined text-3xl">check_circle</span>
+              <div className="py-10 text-center space-y-5 animate-fade-in">
+                <div className="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center mx-auto shadow-sm animate-bounce">
+                  <span className="material-symbols-outlined text-3xl">chat</span>
                 </div>
-                <h3 className="font-sans text-xl font-bold text-gray-900 dark:text-white">Request Received!</h3>
-                <p className="font-sans text-xs sm:text-sm text-gray-600 dark:text-gray-300 max-w-sm mx-auto">
-                  Thank you for reaching out. We&apos;ll review your details and get back to you within 24 hours.
-                </p>
-                <button
-                  onClick={() => setFormSubmitted(false)}
-                  className="text-xs font-mono font-semibold text-primary dark:text-[#b3e620] underline mt-4 cursor-pointer"
-                >
-                  Send another message
-                </button>
+                <div className="space-y-2">
+                  <h3 className="font-sans text-xl font-bold text-gray-900 dark:text-white">Connecting to WhatsApp...</h3>
+                  <p className="font-sans text-xs sm:text-sm text-gray-600 dark:text-gray-300 max-w-sm mx-auto leading-relaxed">
+                    Thank you, <span className="font-semibold text-gray-900 dark:text-white">{formData.name}</span>! Your consultation details have been formatted and directed to our WhatsApp support at{" "}
+                    <strong className="text-primary font-mono">{CONTACT_PHONE}</strong>.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                  <a
+                    href={getWhatsAppUrl(buildConsultationMessage(formData))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-full font-sans text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 shadow-md hover:shadow-lg active:scale-95"
+                  >
+                    <span>Open WhatsApp Chat</span>
+                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
+                  <button
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setFormData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        platform: "Shopify",
+                        challenge: "",
+                      });
+                    }}
+                    className="text-xs font-mono font-semibold text-primary dark:text-[#b3e620] underline py-2 cursor-pointer"
+                  >
+                    Send another message
+                  </button>
+                </div>
               </div>
             ) : (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  const msg = buildConsultationMessage(formData);
+                  const waUrl = getWhatsAppUrl(msg);
                   setFormSubmitted(true);
+                  if (typeof window !== "undefined") {
+                    window.open(waUrl, "_blank", "noopener,noreferrer");
+                  }
                 }}
                 className="space-y-4 text-left"
               >
@@ -957,13 +990,17 @@ export default function Home() {
                 </div>
 
                 {/* Submit Button */}
-                <div className="pt-2">
+                <div className="pt-2 space-y-2">
                   <button
                     type="submit"
-                    className="w-full bg-[#b3e620] hover:bg-[#9ccc1c] active:scale-[0.99] text-gray-900 font-sans text-xs sm:text-sm font-semibold py-3.5 px-6 rounded-full transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer text-center select-none"
+                    className="w-full bg-[#b3e620] hover:bg-[#9ccc1c] active:scale-[0.99] text-gray-900 font-sans text-xs sm:text-sm font-bold py-3.5 px-6 rounded-full transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer text-center select-none flex items-center justify-center gap-2"
                   >
-                    Start the Conversation
+                    <span>Start the Conversation via WhatsApp</span>
+                    <span className="material-symbols-outlined text-base">arrow_forward</span>
                   </button>
+                  <p className="text-[10px] text-center text-gray-500 dark:text-gray-400 font-sans">
+                    Routes directly to our WhatsApp support team at <strong>{CONTACT_PHONE}</strong>
+                  </p>
                 </div>
               </form>
             )}
@@ -1004,7 +1041,7 @@ export default function Home() {
             >
               <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-surface-container shadow-sm border border-primary/5">
                 <img
-                  src="https://www.maydayinternet.com/wp-content/uploads/2026/07/Why-Shopify-Transaction.png"
+                  src="/blogs/why-shopify-transaction.png"
                   alt="Why Shopify Transaction Fees Don’t Apply"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -1030,7 +1067,7 @@ export default function Home() {
             >
               <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-surface-container shadow-sm border border-primary/5">
                 <img
-                  src="https://www.maydayinternet.com/wp-content/uploads/2026/06/Payment-Gateway-Reconciliation-scaled.jpeg"
+                  src="/blogs/payment-gateway-reconciliation.jpeg"
                   alt="Payment Gateway Reconciliation"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -1056,7 +1093,7 @@ export default function Home() {
             >
               <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-surface-container shadow-sm border border-primary/5">
                 <img
-                  src="https://www.maydayinternet.com/wp-content/uploads/2026/05/magnific_photorealistic-indian-eco_2938431220-e1780911927429.png"
+                  src="/blogs/sustainable-ecommerce.png"
                   alt="Engineering Greener Ecosystems"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -1067,7 +1104,7 @@ export default function Home() {
                   June 8, 2026 • 8 min Read
                 </span>
                 <h3 className="font-sans text-sm md:text-[15px] font-semibold text-on-surface dark:text-white group-hover:text-primary transition-colors leading-snug line-clamp-3 mb-3">
-                  Engineering Greener Ecosystems: The Mayday Internet Sustainability Framework
+                  Engineering Greener Ecosystems: The Create My Shop Sustainability Framework
                 </h3>
                 <div className="inline-flex items-center text-[11px] font-medium px-2.5 py-1 rounded-md bg-[#f2f4f2] dark:bg-white/5 text-on-surface/80 dark:text-white/80 border border-primary/5">
                   Shopify

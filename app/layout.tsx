@@ -3,6 +3,7 @@ import { Inter, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CONTACT_PHONE } from "@/data/contact";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -70,6 +71,14 @@ const jsonLdSchema = {
       description:
         "High-performance Shopify development agency building custom storefronts, bespoke Liquid themes, PostBus shipping software, and VaChat AI WhatsApp automation.",
       sameAs: ["https://www.postbus.in", "https://vachat.in"],
+      telephone: CONTACT_PHONE,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: CONTACT_PHONE,
+          contactType: "customer service",
+        },
+      ],
     },
     {
       "@type": "SoftwareApplication",

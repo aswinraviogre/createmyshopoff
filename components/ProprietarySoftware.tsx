@@ -4,6 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SOFTWARE_PRODUCTS, SoftwareProduct } from "@/data/software";
+import {
+  getWhatsAppUrl,
+  buildSoftwareInquiryMessage,
+  CONTACT_PHONE,
+} from "@/data/contact";
 
 interface ProprietarySoftwareProps {
   onContactClick?: () => void;
@@ -157,14 +162,16 @@ export default function ProprietarySoftware({
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </Link>
 
-                  {onContactClick && (
-                    <button
-                      onClick={onContactClick}
-                      className="inline-flex items-center gap-1.5 border border-primary/10 dark:border-white/10 text-on-surface-variant hover:text-primary px-3 py-2.5 rounded-full font-sans text-xs font-medium hover:bg-forest-light dark:hover:bg-white/5 transition-all cursor-pointer"
-                    >
-                      <span>Inquire</span>
-                    </button>
-                  )}
+                  <a
+                    href={getWhatsAppUrl(buildSoftwareInquiryMessage(product.name, product.url))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-primary/20 dark:border-white/10 text-on-surface-variant hover:text-primary px-3 py-2.5 rounded-full font-sans text-xs font-semibold hover:bg-forest-light dark:hover:bg-white/5 transition-all cursor-pointer"
+                    title={`Inquire about ${product.name} on WhatsApp (${CONTACT_PHONE})`}
+                  >
+                    <span className="material-symbols-outlined text-sm text-[#25D366]">chat</span>
+                    <span>Inquire</span>
+                  </a>
                 </div>
               </div>
 
